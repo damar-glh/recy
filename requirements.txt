@@ -1,0 +1,8 @@
+pip~=24.3.1
+wheel~=0.41.2
+protobuf~=5.29.1
+pillow~=11.0.0
+Jinja2~=3.1.4
+redis~=5.2.0
+scikit-learn~=1.6.1
+Flask~=3.1.0
