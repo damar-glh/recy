@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Raleway', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Raleway', sans-serif;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    h2 {
+        font-size: 48px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    h4 {
+        font-size: 36px;
+    }
+
+    h5 {
+        font-size: 24px;
+    }
+
+    h6 {
+        font-size: 20px;
+    }
+
+    p {
+        font-family: 'Domine', serif;
+        font-size: 20px;
+    }
+
+    small {
+        font-family: 'Domine', serif;
+        font-size: 16px;
+    }
+
+    a {
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    button {
+        font-family: 'Raleway', sans-serif;
+    }
+}

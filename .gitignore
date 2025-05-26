@@ -25,3 +25,6 @@ model/
 # OS files
 .DS_Store
 Thumbs.db
+
+# module
+node_modules/
