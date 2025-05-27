@@ -4,7 +4,6 @@ from joblib import load
 # Blueprint
 main_routes = Blueprint('main_routes', __name__)
 
-# Load model dan scaler
 with open('model/trash_predict_model_scalar.pkl', 'rb') as scaler_file:
     scaler = load(scaler_file)
 with open('model/trash_predict_model_svm.pkl', 'rb') as model_file:

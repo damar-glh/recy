@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recy. - Hasil Klasifikasi</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo.svg') }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
+</head>
+<body>
+<main class="bg-white w-full max-w-[1440px] mx-auto px-4">
+    <nav class="mx-auto p-10">
+        <div class="flex justify-between items-center gap-10">
+            <div>
+                <svg width="auto" height="32" viewBox="0 0 68 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_73_37)">
+                        <path d="M4 3C4 1.34315 5.34315 0 7 0H51.1429C58.2437 0 64 5.75634 64 12.8571C64 14.0406 63.0406 15 61.8571 15H16C9.37258 15 4 9.62742 4 3Z"
+                              fill="#F29620"/>
+                    </g>
+                    <g filter="url(#filter1_d_73_37)">
+                        <path d="M4 20C4 18.3431 5.34315 17 7 17H51.1429C58.2437 17 64 22.7563 64 29.8571C64 31.0406 63.0406 32 61.8571 32H16C9.37258 32 4 26.6274 4 20Z"
+                              fill="#182822"/>
+                    </g>
+                    <path d="M12.36 21V6.8H18.76C19.4267 6.8 20.04 6.94 20.6 7.22C21.1733 7.48667 21.6667 7.85333 22.08 8.32C22.4933 8.77333 22.8133 9.28667 23.04 9.86C23.28 10.4333 23.4 11.0133 23.4 11.6C23.4 12.1867 23.3067 12.7467 23.12 13.28C22.9333 13.8 22.6667 14.2733 22.32 14.7C21.9733 15.1133 21.56 15.4533 21.08 15.72L24.2 21H20.58L17.86 16.42H15.64V21H12.36ZM15.64 13.56H18.64C18.9067 13.56 19.14 13.48 19.34 13.32C19.5533 13.1467 19.7267 12.9133 19.86 12.62C19.9933 12.3267 20.06 11.9867 20.06 11.6C20.06 11.2133 19.98 10.88 19.82 10.6C19.6733 10.3067 19.4867 10.08 19.26 9.92C19.0333 9.76 18.7933 9.68 18.54 9.68H15.64V13.56ZM30.1669 21.2C29.2735 21.2 28.4802 21.06 27.7869 20.78C27.0935 20.4867 26.5002 20.0933 26.0069 19.6C25.5269 19.1067 25.1602 18.54 24.9069 17.9C24.6535 17.2467 24.5269 16.5667 24.5269 15.86C24.5269 14.8467 24.7469 13.9267 25.1869 13.1C25.6402 12.26 26.2869 11.5867 27.1269 11.08C27.9669 10.56 28.9802 10.3 30.1669 10.3C31.3535 10.3 32.3602 10.5533 33.1869 11.06C34.0269 11.5667 34.6669 12.2333 35.1069 13.06C35.5469 13.8733 35.7669 14.76 35.7669 15.72C35.7669 15.9067 35.7535 16.0933 35.7269 16.28C35.7135 16.4533 35.7002 16.6067 35.6869 16.74H27.9269C27.9669 17.2067 28.0935 17.6 28.3069 17.92C28.5335 18.24 28.8202 18.4867 29.1669 18.66C29.5135 18.82 29.8802 18.9 30.2669 18.9C30.7469 18.9 31.1935 18.7867 31.6069 18.56C32.0335 18.3333 32.3269 18.0267 32.4869 17.64L35.2069 18.4C34.9402 18.9467 34.5602 19.4333 34.0669 19.86C33.5869 20.2733 33.0135 20.6 32.3469 20.84C31.6935 21.08 30.9669 21.2 30.1669 21.2ZM27.8469 14.78H32.4069C32.3535 14.34 32.2269 13.96 32.0269 13.64C31.8269 13.3067 31.5602 13.0533 31.2269 12.88C30.8935 12.6933 30.5269 12.6 30.1269 12.6C29.7135 12.6 29.3402 12.6933 29.0069 12.88C28.6869 13.0533 28.4269 13.3067 28.2269 13.64C28.0269 13.96 27.9002 14.34 27.8469 14.78ZM42.2372 21.2C41.3439 21.2 40.5505 21.0533 39.8572 20.76C39.1639 20.4667 38.5705 20.0667 38.0772 19.56C37.5972 19.0533 37.2305 18.4733 36.9772 17.82C36.7239 17.1667 36.5972 16.4733 36.5972 15.74C36.5972 14.78 36.8172 13.8867 37.2572 13.06C37.7105 12.2333 38.3572 11.5667 39.1972 11.06C40.0372 10.5533 41.0505 10.3 42.2372 10.3C43.4372 10.3 44.4505 10.56 45.2772 11.08C46.1172 11.5867 46.7439 12.2533 47.1572 13.08L44.0372 14.02C43.8372 13.7 43.5772 13.4533 43.2572 13.28C42.9505 13.1067 42.6039 13.02 42.2172 13.02C41.7772 13.02 41.3772 13.1333 41.0172 13.36C40.6705 13.5867 40.3905 13.9 40.1772 14.3C39.9772 14.7 39.8772 15.18 39.8772 15.74C39.8772 16.2867 39.9839 16.7667 40.1972 17.18C40.4105 17.5933 40.6905 17.92 41.0372 18.16C41.3839 18.3867 41.7772 18.5 42.2172 18.5C42.4839 18.5 42.7305 18.46 42.9572 18.38C43.1972 18.2867 43.4105 18.16 43.5972 18C43.7972 17.84 43.9505 17.66 44.0572 17.46L47.1772 18.42C46.9239 18.9533 46.5572 19.4333 46.0772 19.86C45.6105 20.2733 45.0572 20.6 44.4172 20.84C43.7772 21.08 43.0505 21.2 42.2372 21.2ZM48.4886 22.58C48.7553 22.66 49.0019 22.72 49.2286 22.76C49.4686 22.8133 49.6819 22.84 49.8686 22.84C50.1219 22.84 50.3353 22.78 50.5086 22.66C50.6953 22.5533 50.8553 22.36 50.9886 22.08C51.1219 21.8133 51.2419 21.4533 51.3486 21L47.3486 10.5H50.6486L53.0886 17.72L55.1686 10.5H58.1886L54.1886 22.7C54.0019 23.2733 53.7153 23.78 53.3286 24.22C52.9419 24.66 52.4753 25 51.9286 25.24C51.3819 25.4933 50.7819 25.62 50.1286 25.62C49.8486 25.62 49.5753 25.5933 49.3086 25.54C49.0419 25.5 48.7686 25.4267 48.4886 25.32V22.58Z"
+                          fill="white"/>
+                    <path d="M58.2519 21V17.74H60.8719V21H58.2519Z" fill="#F29620"/>
+                    <defs>
+                        <filter id="filter0_d_73_37" x="0" y="0" width="68" height="23" filterUnits="userSpaceOnUse"
+                                color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dy="4"/>
+                            <feGaussianBlur stdDeviation="2"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_73_37"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_73_37" result="shape"/>
+                        </filter>
+                        <filter id="filter1_d_73_37" x="0" y="17" width="68" height="23" filterUnits="userSpaceOnUse"
+                                color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dy="4"/>
+                            <feGaussianBlur stdDeviation="2"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_73_37"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_73_37" result="shape"/>
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+            <ul class="flex justify-around w-1/2">
+                <li><a href="/" class="text-darkgreen">Home</a></li>
+                <li><a href="/" class="text-darkgreen">About</a></li>
+                <li><a href="/" class="text-darkgreen">
+                    Classification
+                </a></li>
+                <li><a href="/" class="text-darkgreen">Contact</a></li>
+            </ul>
+            <div class="flex items-center gap-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-search-icon lucide-search">
+                    <path d="m21 21-4.34-4.34"/>
+                    <circle cx="11" cy="11" r="8"/>
+                </svg>
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-globe-icon lucide-globe">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                        <path d="M2 12h20"/>
+                    </svg>
+                    <p class="text-darkgreen text-base font-bold">EN</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                        <path d="m6 9 6 6 6-6"/>
+                    </svg>
+                </div>
+                <button class="text-white bg-oranye font-bold px-4 py-2 rounded-3xl hover:bg-darkgreen shadow-2xl transition duration-300">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="w-full min-h-screen flex flex-col justify-center items-center text-center">
+        <div class="bg-white shadow-xl rounded-3xl p-10 w-full max-w-3xl">
+            <div class="flex flex-col items-center mb-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                     stroke="#F29620"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="mb-4">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <h1 class="text-darkgreen text-3xl font-extrabold mb-2">Hasil Klasifikasi</h1>
+                <p class="text-gray-600">Prediksi berhasil dilakukan</p>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-2xl mb-8">
+                <h2 class="text-2xl font-bold text-darkgreen mb-4">Sampah Terdeteksi:</h2>
+                <div class="bg-oranye text-white text-2xl font-bold py-4 px-6 rounded-xl inline-block">
+                    {{ prediction }}
+                </div>
+                <p class="mt-4 text-gray-600">Tingkat keyakinan: {{ confidence }}%</p>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-2xl mb-8">
+                <h3 class="text-xl font-bold text-darkgreen mb-4">Rekomendasi Penanganan:</h3>
+                <div class="text-left">
+                    {% if "Organik" in prediction %}
+                    <p class="mb-2">• Sampah organik dapat dikompos menjadi pupuk</p>
+                    <p class="mb-2">• Pisahkan dari sampah jenis lainnya</p>
+                    <p class="mb-2">• Dapat digunakan untuk budidaya tanaman</p>
+                    {% elif "Anorganik" in prediction %}
+                    <p class="mb-2">• Sampah anorganik sebaiknya dipisahkan berdasarkan jenisnya</p>
+                    <p class="mb-2">• Beberapa jenis dapat didaur ulang, seperti plastik dan kertas</p>
+                    <p class="mb-2">• Kurangi penggunaan barang sekali pakai</p>
+                    {% elif "B3" in prediction %}
+                    <p class="mb-2">• Sampah B3 harus ditangani khusus dan tidak boleh dibuang sembarangan</p>
+                    <p class="mb-2">• Bawa ke tempat pengolahan sampah B3 terdekat</p>
+                    <p class="mb-2">• Jangan dicampur dengan sampah rumah tangga biasa</p>
+                    {% elif "Daur Ulang" in prediction %}
+                    <p class="mb-2">• Sampah ini bisa didaur ulang menjadi produk baru</p>
+                    <p class="mb-2">• Kumpulkan dan serahkan ke bank sampah atau pengepul</p>
+                    <p class="mb-2">• Bisa menghasilkan nilai ekonomi tambahan</p>
+                    {% else %}
+                    <p class="mb-2">• Pisahkan sampah berdasarkan jenisnya</p>
+                    <p class="mb-2">• Kurangi penggunaan barang sekali pakai</p>
+                    <p class="mb-2">• Gunakan kembali barang yang masih layak pakai</p>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-8">
+                <a href="/" class="bg-oranye text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-darkgreen transition-all duration-300">
+                    Kembali ke Beranda
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
