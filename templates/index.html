@@ -25,27 +25,27 @@
                 <li><a href="/" class="text-darkgreen">Contact</a></li>
             </ul>
             <div class="flex items-center gap-6">
-<!--                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
-<!--                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
-<!--                     class="lucide lucide-search-icon lucide-search">-->
-<!--                    <path d="m21 21-4.34-4.34"/>-->
-<!--                    <circle cx="11" cy="11" r="8"/>-->
-<!--                </svg>-->
-<!--                <div class="flex items-center gap-2 cursor-pointer">-->
-<!--                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
-<!--                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
-<!--                         class="lucide lucide-globe-icon lucide-globe">-->
-<!--                        <circle cx="12" cy="12" r="10"/>-->
-<!--                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>-->
-<!--                        <path d="M2 12h20"/>-->
-<!--                    </svg>-->
-<!--                    <small class="text-darkgreen font-bold">EN</small>-->
-<!--                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
-<!--                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
-<!--                         class="lucide lucide-chevron-down-icon lucide-chevron-down">-->
-<!--                        <path d="m6 9 6 6 6-6"/>-->
-<!--                    </svg>-->
-<!--                </div>-->
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+                <!--                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
+                <!--                     class="lucide lucide-search-icon lucide-search">-->
+                <!--                    <path d="m21 21-4.34-4.34"/>-->
+                <!--                    <circle cx="11" cy="11" r="8"/>-->
+                <!--                </svg>-->
+                <!--                <div class="flex items-center gap-2 cursor-pointer">-->
+                <!--                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+                <!--                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
+                <!--                         class="lucide lucide-globe-icon lucide-globe">-->
+                <!--                        <circle cx="12" cy="12" r="10"/>-->
+                <!--                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>-->
+                <!--                        <path d="M2 12h20"/>-->
+                <!--                    </svg>-->
+                <!--                    <small class="text-darkgreen font-bold">EN</small>-->
+                <!--                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+                <!--                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
+                <!--                         class="lucide lucide-chevron-down-icon lucide-chevron-down">-->
+                <!--                        <path d="m6 9 6 6 6-6"/>-->
+                <!--                    </svg>-->
+                <!--                </div>-->
                 <button class="text-white bg-oranye font-bold px-4 py-2 rounded-3xl hover:bg-darkgreen shadow-2xl transition duration-300">
                     Get Started
                 </button>
@@ -95,9 +95,8 @@
             </svg>
             <h1 class="text-darkgreen font-extrabold">Trash Prediction</h1>
             <small class="max-w-6xl">
-                Our advanced system will analyze the images and provide appropriate waste management suggestions, from
-                sorting to environmentally friendly recycling methods. With this technology, managing waste becomes
-                easier and more efficient.
+                Analyze images and provide appropriate waste management suggestions, from sorting to environmentally
+                friendly recycling methods etc.
             </small>
         </div>
         <div class="max-w-6xl mx-auto w-full">
@@ -122,27 +121,25 @@
             <!--                    Camera-->
             <!--                </button>-->
             <!--            </div>-->
-            <div class="flex flex-col gap-12 border-2 border-dashed border-erieblack rounded-3xl p-24 text-center bg-gray-50 hover:border-oranye hover:bg-orange-50 transition-all duration-300"
-                 id="drop-zone">
+            <form id="uploadForm" action="{{ url_for('main_routes.make_prediction') }}" method="POST"
+                  enctype="multipart/form-data"
+                  class="flex flex-col items-center gap-12 border-2 border-dashed border-erieblack rounded-3xl p-24 text-center bg-gray-50 hover:border-oranye hover:bg-orange-50 transition-all duration-300">
                 <h4 class="font-extrabold text-darkgreen max-w-md mx-auto">
                     Drag and drop an image or <span class="text-oranye">browse to upload</span>.
                 </h4>
-                <form id="uploadForm" action="{{ url_for('main_routes.make_prediction') }}" method="POST"
-                      enctype="multipart/form-data">
-                    <input type="file" name="image" id="fileInput" class="hidden" accept=".jpg, .jpeg, .png, .webp">
-                    <label for="fileInput"
-                           class="bg-oranye text-white px-8 py-4 rounded-full font-semibold cursor-pointer hover:bg-darkgreen transition-all duration-300">Upload
-                        your photo</label>
-                    {% if error_message %}
-                    <div class="mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
-                         role="alert">
-                        <strong>Error:</strong> {{ error_message }}
-                    </div>
-                    {% endif %}
-                    <small class="mt-12 block" id="counter">
-                        File must be in JPG, JPEG, PNG, or WEBP format and less than 5MB.
-                    </small>
-                </form>
+                <input type="file" name="image" id="fileInput" class="hidden" accept=".jpg, .jpeg, .png, .webp">
+                <label for="fileInput"
+                       class="bg-oranye max-w-xs text-white px-8 py-4 rounded-full font-semibold cursor-pointer hover:bg-darkgreen transition-all duration-300">Upload
+                    your photo</label>
+                {% if error_message %}
+                <div class="mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                     role="alert">
+                    <strong>Error:</strong> {{ error_message }}
+                </div>
+                {% endif %}
+                <small class="mt-12 block" id="counter">
+                    File must be in JPG, JPEG, PNG, or WEBP format and less than 5MB.
+                </small>
                 <div class="flex justify-center gap-12">
                     <div class="flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
@@ -165,7 +162,7 @@
                         <small>Free to use</small>
                     </div>
                 </div>
-            </div>
+            </form>
             <small class="mt-6 block text-darkgreen">
                 By uploading your image, you agree to the Recy. <a href="/" class="text-oranye font-bold">Terms of
                 use </a> and <a href="/" class="text-oranye font-bold">Privacy Policy</a>.
@@ -177,60 +174,102 @@
         </div>
     </section>
 </main>
+<!--<script type="module" src="{{url_for('static', filename='js/main.js')}}"></script>-->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const dropZone = document.getElementById('drop-zone');
-        const uploadForm = document.getElementById('uploadForm');
-        const fileInput = document.getElementById('fileInput');
-        const counterElement = document.getElementById('counter');
-
-        function checkFileSize(file) {
-            const maxSize = 5 * 1024 * 1024;
-            if (file.size > maxSize) {
-                counterElement.classList.add('text-red-500', 'font-bold');
-                counterElement.classList.remove('text-darkgreen');
-                return false;
-            }
-            return true;
-        }
-
-        function checkFileType(file) {
-            const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
-            if (!allowedTypes.includes(file.type)) {
-                counterElement.classList.add('text-red-500', 'font-bold');
-                counterElement.classList.remove('text-darkgreen');
-                return false;
-            }
-            return true;
-        }
-
-        // dropZone.addEventListener('dragover', (e) => {
-        //     e.preventDefault();
-        //     dropZone.classList.add('border-4', 'border-oranye', 'bg-orange-50');
-        // });
-        //
-        // dropZone.addEventListener('dragleave', () => {
-        //     dropZone.classList.remove('border-4', 'border-oranye', 'bg-orange-50');
-        // });
-        //
-        // dropZone.addEventListener('drop', (e) => {
-        //     e.preventDefault();
-        //     dropZone.classList.remove('border-4', 'border-oranye', 'bg-orange-50');
-        //     console.log(e.dataTransfer.files[0]);
-        // });
-
-        fileInput.addEventListener('change', () => {
-            const file = fileInput.files[0];
-            if (checkFileSize(file) && checkFileType(file)) {
-                counterElement.innerText = '';
-                uploadForm.submit();
-            }
-        });
-
-        // dropZone.addEventListener('click', () => {
-        //     fileInput.click();
-        // });
+        new FileUploadHandler();
     })
+
+    const CONFIG = {
+        maxFileSize: 5 * 1024 * 1024,
+        allowedFileTypes: ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'],
+        cssClases: {
+            error: ['text-red-500', 'font-bold'],
+            normal: ['text-green-500'],
+            dragOver: ['border-4', 'border-oranye', 'bg-orange-50']
+        }
+    }
+
+    class FileUploadHandler {
+        constructor() {
+            this.uploadForm = document.getElementById('uploadForm');
+            this.fileInput = document.getElementById('fileInput');
+            this.counter = document.getElementById('counter');
+
+            this.initializeEventListeners();
+        }
+
+        initializeEventListeners() {
+            this.uploadForm.addEventListener('change', (e) => this.handleFileChange(e));
+            this.uploadForm.addEventListener('dragover', (e) => this.handleDragOver(e));
+            this.uploadForm.addEventListener('dragleave', (e) => this.handleDragLeave(e));
+            this.uploadForm.addEventListener('drop', (e) => this.handleDrop(e));
+
+        }
+
+        validateFile(file) {
+            return this.checkFileSize(file) && this.checkFileType(file);
+        }
+
+        checkFileSize(file) {
+            if (file.size > CONFIG.maxFileSize) {
+                this.showError();
+                return false;
+            }
+            return true;
+        }
+
+        checkFileType(file) {
+            if (!CONFIG.allowedFileTypes.includes(file.type)) {
+                this.showError();
+                return false;
+            }
+            return true;
+        }
+
+        showError() {
+            this.counter.classList.remove(...CONFIG.cssClases.normal);
+            this.counter.classList.add(...CONFIG.cssClases.error);
+        }
+
+        handleFileChange(e) {
+            e.preventDefault();
+            const file = e.target.files[0];
+            this.processFile(file);
+        }
+
+        handleDragOver(e) {
+            e.preventDefault();
+            this.uploadForm.classList.add(...CONFIG.cssClases.dragOver);
+        }
+
+        handleDragLeave(e) {
+            e.preventDefault();
+            this.uploadForm.classList.remove(...CONFIG.cssClases.dragOver);
+        }
+
+        handleDrop(e) {
+            e.preventDefault();
+            this.uploadForm.classList.remove(...CONFIG.cssClases.dragOver);
+
+            const file = e.dataTransfer.files[0];
+            const newDataTransfer = new DataTransfer();
+            newDataTransfer.items.add(file);
+            this.fileInput.files = newDataTransfer.files;
+
+            this.processFile(file);
+        }
+
+        processFile(file) {
+            try {
+                if (this.validateFile(file)) {
+                    this.uploadForm.submit();
+                }
+            } catch (error) {
+                console.error('Error processing file:', error);
+            }
+        }
+    }
 </script>
 </body>
 </html>
