@@ -678,26 +678,6 @@ button {
   isolation: isolate;
 }
 
-.z-0{
-  z-index: 0;
-}
-
-.order-1{
-  order: 1;
-}
-
-.order-2{
-  order: 2;
-}
-
-.m-1{
-  margin: 0.25rem;
-}
-
-.m-2{
-  margin: 0.5rem;
-}
-
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -751,8 +731,48 @@ button {
   display: flex;
 }
 
+.inline-flex{
+  display: inline-flex;
+}
+
 .table{
   display: table;
+}
+
+.inline-table{
+  display: inline-table;
+}
+
+.table-caption{
+  display: table-caption;
+}
+
+.table-cell{
+  display: table-cell;
+}
+
+.table-column{
+  display: table-column;
+}
+
+.table-column-group{
+  display: table-column-group;
+}
+
+.table-footer-group{
+  display: table-footer-group;
+}
+
+.table-header-group{
+  display: table-header-group;
+}
+
+.table-row-group{
+  display: table-row-group;
+}
+
+.table-row{
+  display: table-row;
 }
 
 .grid{
@@ -763,13 +783,12 @@ button {
   display: contents;
 }
 
-.hidden{
-  display: none;
+.list-item{
+  display: list-item;
 }
 
-.size-0{
-  width: 0px;
-  height: 0px;
+.hidden{
+  display: none;
 }
 
 .size-1{
@@ -777,18 +796,9 @@ button {
   height: 0.25rem;
 }
 
-.size-2{
-  width: 0.5rem;
-  height: 0.5rem;
-}
-
-.size-8{
-  width: 2rem;
-  height: 2rem;
-}
-
-.h-1{
-  height: 0.25rem;
+.size-0{
+  width: 0px;
+  height: 0px;
 }
 
 .h-32{
@@ -831,8 +841,16 @@ button {
   max-width: 20rem;
 }
 
+.flex-shrink{
+  flex-shrink: 1;
+}
+
 .shrink{
   flex-shrink: 1;
+}
+
+.flex-grow{
+  flex-grow: 1;
 }
 
 .grow{
@@ -857,6 +875,10 @@ button {
 
 .flex-col{
   flex-direction: column;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
 }
 
 .items-center{
@@ -903,6 +925,10 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.text-wrap{
+  text-wrap: wrap;
 }
 
 .rounded{
@@ -985,10 +1011,6 @@ button {
      object-fit: cover;
 }
 
-.p-1{
-  padding: 0.25rem;
-}
-
 .p-10{
   padding: 2.5rem;
 }
@@ -999,6 +1021,10 @@ button {
 
 .p-8{
   padding: 2rem;
+}
+
+.p-1{
+  padding: 0.25rem;
 }
 
 .px-4{
@@ -1031,12 +1057,24 @@ button {
   padding-bottom: 1rem;
 }
 
+.ps-1{
+  padding-inline-start: 0.25rem;
+}
+
+.ps-2{
+  padding-inline-start: 0.5rem;
+}
+
 .text-left{
   text-align: left;
 }
 
 .text-center{
   text-align: center;
+}
+
+.text-justify{
+  text-align: justify;
 }
 
 .text-2xl{
@@ -1143,17 +1181,6 @@ button {
   text-decoration-line: line-through;
 }
 
-.antialiased{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.shadow{
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-2xl{
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -1172,6 +1199,12 @@ button {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow{
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .outline{
   outline-style: solid;
 }
@@ -1184,6 +1217,11 @@ button {
 
 .blur{
   --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.drop-shadow{
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -1224,312 +1262,236 @@ button {
   transition-duration: 300ms;
 }
 
+.ease-in{
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.ease-in-out{
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-out{
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.\[-10\:-4\]{
+  -10: -4;
+}
+
+.\[-10\:16\]{
+  -10: 16;
+}
+
 .\[-2\:-1\]{
   -2: -1;
 }
 
-.\[-4\:-1\]{
-  -4: -1;
+.\[-3\:-1\]{
+  -3: -1;
 }
 
-.\[-n-tb\:len\(raz\)-tb\]{
-  -n-tb: len(raz)-tb;
+.\[-4\:-3\]{
+  -4: -3;
 }
 
-.\[ax\:ax\+indx\.ndim\]{
-  ax: ax+indx.ndim;
+.\[-5\:-3\]{
+  -5: -3;
 }
 
-.\[axis\:axis\+2\]{
-  axis: axis+2;
+.\[-6\:-5\]{
+  -6: -5;
 }
 
-.\[b\:e\]{
-  b: e;
+.\[-\:\|\\s\]{
+  -: |\s;
 }
 
-.\[begin\:begin\+self\._recs\*self\._recsize\]{
-  begin: begin+self. recs*self. recsize;
+.\[-\:\|\]{
+  -: |;
 }
 
-.\[begin_\:begin_\+a_size\]{
-  begin_: begin +a size;
+.\[_\:\.\]{
+  _: .;
 }
 
-.\[data_start\:data_end\]{
-  data_start: data end;
+.\[a-zA-Z0-9\:\.\]{
+  a-z-a--z0-9: .;
 }
 
-.\[ellipsis_pos\:ellipsis_pos\+1\]{
-  ellipsis_pos: ellipsis pos+1;
+.\[a\:n\]{
+  a: n;
 }
 
-.\[first_zero\:-first_zero\]{
-  first_zero: -first zero;
+.\[batch_dims\:-1\]{
+  batch_dims: -1;
 }
 
-.\[halflen\:-halflen\]{
-  halflen: -halflen;
+.\[batch_dims\:axis\]{
+  batch_dims: axis;
 }
 
-.\[i0\:i1\]{
-  i0: i1;
+.\[batch_rank\:-1\]{
+  batch_rank: -1;
 }
 
-.\[i\:\2c j\]{
-  i: ,j;
+.\[batch_start\:batch_end\]{
+  batch_start: batch end;
 }
 
-.\[i\:i\+1\]{
-  i: i+1;
+.\[begin\:end\]{
+  begin: end;
 }
 
-.\[i\:i\+7\]{
-  i: i+7;
+.\[bx_start\:bx_end\]{
+  bx_start: bx end;
 }
 
-.\[i\:i\+BLOCK\]{
-  i: i+BLOCK;
+.\[by_start\:by_end\]{
+  by_start: by end;
 }
 
-.\[i\:i\+k\+2\]{
-  i: i+k+2;
+.\[cluster_rank_offset_start\:cluster_rank_offset_end\]{
+  cluster_rank_offset_start: cluster rank offset end;
 }
 
-.\[i\:i\+lc2\]{
-  i: i+lc2;
+.\[current_index\:current_index\+element\]{
+  current_index: current index+element;
 }
 
-.\[i\:i\+read_count\]{
-  i: i+read count;
+.\[ellipsis_start\:ellipsis_end\]{
+  ellipsis_start: ellipsis end;
 }
 
-.\[i\:i\+scale\]{
-  i: i+scale;
+.\[end\:match\.start\(\)\]{
+  end: match.start();
+}
+
+.\[first\:last\]{
+  first: last;
+}
+
+.\[i\:endpos\]{
+  i: endpos;
+}
+
+.\[i\:item\]{
+  i: item;
 }
 
 .\[i\:j\]{
   i: j;
 }
 
-.\[ii\:jj\]{
-  ii: jj;
+.\[i\:pos\]{
+  i: pos;
 }
 
-.\[ind1\:ind2\+1\]{
-  ind1: ind2+1;
+.\[idx0\:start\]{
+  idx0: start;
 }
 
-.\[index_ndim\:tmp_ndim\]{
-  index_ndim: tmp ndim;
+.\[idx\:rlim\]{
+  idx: rlim;
 }
 
-.\[indptr_3\:indptr_4\]{
-  indptr_3: indptr 4;
+.\[index-2\:index\]{
+  index-2: index;
+}
+
+.\[indicator_start\:indicator_end\]{
+  indicator_start: indicator end;
 }
 
 .\[inherit_ndx\:inherit_ndx\+1\]{
   inherit_ndx: inherit ndx+1;
 }
 
-.\[j-2\:j\+3\]{
-  j-2: j+3;
+.\[j\:chunk_end\]{
+  j: chunk end;
 }
 
-.\[j\:j\+block_size\]{
-  j: j+block size;
+.\[k\:endpos\]{
+  k: endpos;
 }
 
-.\[j\:j\+chunksize\]{
-  j: j+chunksize;
-}
-
-.\[j\:j\+lc2\]{
-  j: j+lc2;
-}
-
-.\[js\:je\]{
-  js: je;
-}
-
-.\[k1\:k2\]{
-  k1: k2;
-}
-
-.\[k2\:-k2\]{
-  k2: -k2;
-}
-
-.\[k\:-k\]{
-  k: -k;
-}
-
-.\[k\:N\]{
-  k: N;
-}
-
-.\[k\:k\+n\+1\]{
-  k: k+n+1;
-}
-
-.\[k\:k\+n\]{
-  k: k+n;
-}
-
-.\[k\:n\+1\]{
-  k: n+1;
-}
-
-.\[k\:n-k-1\]{
-  k: n-k-1;
-}
-
-.\[k_lo\:k_hi\]{
-  k_lo: k hi;
+.\[labelStart\:labelEnd\]{
+  label-start: labelEnd;
 }
 
 .\[last\:start\]{
   last: start;
 }
 
-.\[left\:right\]{
-  left: right;
-}
-
-.\[left_lim\:-right_lim\]{
-  left_lim: -right lim;
+.\[lastPos\:pos\]{
+  last-pos: pos;
 }
 
 .\[line_offset\:end_line\]{
   line_offset: end line;
 }
 
-.\[lo\:hi\+1\]{
-  lo: hi+1;
+.\[low\:high\]{
+  low: high;
 }
 
-.\[m\:2\*m\]{
-  m: 2*m;
+.\[lpos_start\:lpos_end\]{
+  lpos_start: lpos end;
 }
 
-.\[m_start\:m_stop\]{
-  m_start: m stop;
+.\[mem\:pos\]{
+  mem: pos;
 }
 
-.\[m_stop\:n_start\]{
-  m_stop: n start;
+.\[n\:len\(self\)\]{
+  n: len(self);
 }
 
-.\[message_set_item_start\:pos\]{
-  message_set_item_start: pos;
+.\[offset\:end\]{
+  offset: end;
 }
 
-.\[message_start\:message_end\]{
-  message_start: message end;
-}
-
-.\[n-p-2\:end\]{
-  n-p-2: end;
-}
-
-.\[n\:2\*n\]{
-  n: 2*n;
-}
-
-.\[n\:m\+n\]{
-  n: m+n;
-}
-
-.\[n\:n\+1\]{
-  n: n+1;
-}
-
-.\[n\:n\+m\]{
-  n: n+m;
-}
-
-.\[n_start\:n_stop\]{
-  n_start: n stop;
-}
-
-.\[n_ub\:n_ub\+n_free\]{
-  n_ub: n ub+n free;
-}
-
-.\[ndim\:2\*ndim\]{
-  ndim: 2*ndim;
-}
-
-.\[new_pos\:pos\]{
-  new_pos: pos;
-}
-
-.\[nk1-1\:-1\]{
-  nk1-1: -1;
-}
-
-.\[npad\:-npad\]{
-  npad: -npad;
-}
-
-.\[nx\:nx\+ny\]{
-  nx: nx+ny;
+.\[offset\:m\.start\(0\)\]{
+  offset: m.start(0);
 }
 
 .\[offset\:next_offset\]{
   offset: next offset;
 }
 
-.\[offset\:offset\+N\*d\.nbytes\]{
-  offset: offset+N*d.nbytes;
+.\[oldPosition\:self\.data\.position\]{
+  old-position: self.data.position;
 }
 
-.\[offset\:offset\+size\+1\]{
-  offset: offset+size+1;
+.\[ooo_check_start\:current_path_index\]{
+  ooo_check_start: current path index;
 }
 
-.\[offset_items\:offset_items\+count_items\]{
-  offset_items: offset items+count items;
+.\[outermost_included\:innermost_excluded\]{
+  outermost_included: innermost excluded;
 }
 
-.\[old_pos\:new_pos\]{
-  old_pos: new pos;
-}
-
-.\[p\:p\+11\]{
-  p: p+11;
-}
-
-.\[p\:p\+1\]{
-  p: p+1;
-}
-
-.\[p\:p\+21\]{
-  p: p+21;
-}
-
-.\[p\:q\]{
-  p: q;
+.\[output_start_index\:output_end_index\]{
+  output_start_index: output end index;
 }
 
 .\[pos\:end_pos\]{
   pos: end pos;
 }
 
+.\[pos\:matchStart\]{
+  pos: matchStart;
+}
+
+.\[pos\:maximum\]{
+  pos: maximum;
+}
+
 .\[pos\:new_pos\]{
   pos: new pos;
 }
 
-.\[pos\:pos\+1\]{
-  pos: pos+1;
-}
-
-.\[pos\:pos\+size\]{
-  pos: pos+size;
-}
-
-.\[position\:item\.start\(\)\]{
-  position: item.start();
+.\[pos\:pipe\]{
+  pos: pipe;
 }
 
 .\[position\:offset\]{
@@ -1540,108 +1502,72 @@ button {
   position: start;
 }
 
-.\[prev\:k\]{
-  prev: k;
+.\[prev_col\:end_col\]{
+  prev_col: end col;
 }
 
-.\[rank\:n_features\]{
-  rank: n features;
+.\[row_start\:row_end\]{
+  row_start: row end;
 }
 
-.\[row-m\:row\]{
-  row-m: row;
-}
-
-.\[row\:row\+2\]{
-  row: row+2;
-}
-
-.\[s\:s\+4\]{
-  s: s+4;
-}
-
-.\[s\:s\+8\]{
-  s: s+8;
-}
-
-.\[s\:s\+scale\]{
-  s: s+scale;
-}
-
-.\[st\:end\]{
-  st: end;
+.\[sample_length\:2\*sample_length\]{
+  sample_length: 2*sample length;
 }
 
 .\[start\:end\]{
   start: end;
 }
 
+.\[start\:m\.end\(\)\]{
+  start: m.end();
+}
+
+.\[start\:match\.end\(\)\]{
+  start: match.end();
+}
+
 .\[start\:pos\]{
   start: pos;
+}
+
+.\[start\:start\+length\]{
+  start: start+length;
 }
 
 .\[start\:stop\]{
   start: stop;
 }
 
-.\[start_idx\:end_idx\]{
-  start_idx: end idx;
+.\[start_index\:end_index\]{
+  start_index: end index;
 }
 
-.\[start_idx\:line_idx\]{
-  start_idx: line idx;
+.\[start_placeholder\:end_placeholder\]{
+  start_placeholder: end placeholder;
 }
 
 .\[start_pos\:pos\]{
   start_pos: pos;
 }
 
-.\[start_ptr\:end_ptr\]{
-  start_ptr: end ptr;
+.\[start_value_index\:end_value_index\]{
+  start_value_index: end value index;
 }
 
-.\[startptr\:endptr\]{
-  startptr: endptr;
+.\[strartIndex\:end\]{
+  strart-index: end;
 }
 
-.\[sum_indices\:sum_indices\+b\.indices\.size\]{
-  sum_indices: sum indices+b.indices.size;
+.\[strartIndex\:index\]{
+  strart-index: index;
 }
 
-.\[t_eval_i\:t_eval_i_new\]{
-  t_eval_i: t eval i new;
+.\[value_index\:next_value_index\]{
+  value_index: next value index;
 }
 
-.\[t_eval_i_new\:t_eval_i\]{
-  t_eval_i_new: t eval i;
-}
-
-.\[tb\:len\(az\)-te\]{
-  tb: len(az)-te;
-}
-
-.\[user\:passwd\@\]{
-  user: passwd@;
-}
-
-.\[val1\:val2\]{
-  val1: val2;
-}
-
-.\[value_start_pos\:pos\]{
-  value_start_pos: pos;
-}
-
-.\[window_start\:window_end\]{
-  window_start: window end;
-}
-
-.\[x_ndim\:x_ndim\+self\.axis\]{
-  x_ndim: x ndim+self.axis;
-}
-
-.\[xmin\:xmax\]{
-  xmin: xmax;
+.\[values_start\:values_limit\]{
+  values_start: values limit;
 }
 
 .hover\:border-oranye:hover{
