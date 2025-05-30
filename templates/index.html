@@ -129,14 +129,14 @@
                 </h4>
                 <input type="file" name="image" id="fileInput" class="hidden" accept=".jpg, .jpeg, .png, .webp">
                 <label for="fileInput"
-                       class="bg-oranye max-w-xs text-white px-8 py-4 rounded-full font-semibold cursor-pointer hover:bg-darkgreen transition-all duration-300">Upload
+                       class="bg-oranye max-w-xs text-white px-8 py-4 rounded-full font-semibold cursor-pointer shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:bg-darkgreen transition-all duration-300">Upload
                     your photo</label>
-                {% if error_message %}
-                <div class="mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
-                     role="alert">
-                    <strong>Error:</strong> {{ error_message }}
-                </div>
-                {% endif %}
+<!--                {% if error_message %}-->
+<!--                <div class="mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"-->
+<!--                     role="alert">-->
+<!--                    <strong>Error:</strong> {{ error_message }}-->
+<!--                </div>-->
+<!--                {% endif %}-->
                 <small class="mt-12 block" id="counter">
                     File must be in JPG, JPEG, PNG, or WEBP format and less than 5MB.
                 </small>
@@ -174,7 +174,6 @@
         </div>
     </section>
 </main>
-<!--<script type="module" src="{{url_for('static', filename='js/main.js')}}"></script>-->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         new FileUploadHandler();

@@ -16,7 +16,7 @@ def home():
 @main_routes.route('/predict', methods=['POST'])
 def make_prediction():
     if svm_clf_loaded is None or scaler_loaded is None or cnn_feature_extractor_loaded is None or idx_to_label_loaded is None:
-        return render_template('error.html', message="The model or scaler has not loaded correctly. Please double check your model configuration. If the problem persists, contact your system maintainer.")
+        return render_template('maintenance.html')
     file = request.files['image']
     if 'image' not in request.files:
         return render_template('error.html', message="Image file section not found in request. Make sure you uploaded the file through the form provided. Try restarting the upload process from the beginning.")
