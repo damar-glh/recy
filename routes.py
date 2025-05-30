@@ -16,12 +16,12 @@ def home():
 @main_routes.route('/predict', methods=['POST'])
 def make_prediction():
     if svm_clf_loaded is None or scaler_loaded is None or cnn_feature_extractor_loaded is None or idx_to_label_loaded is None:
-        return render_template('error.html', message="Model or scaler not loaded properly.")
+        return render_template('error.html', message="The model or scaler has not loaded correctly. Please double check your model configuration. If the problem persists, contact your system maintainer.")
     file = request.files['image']
     if 'image' not in request.files:
-        return render_template('error.html', message="No file part in the request.")
+        return render_template('error.html', message="Image file section not found in request. Make sure you uploaded the file through the form provided. Try restarting the upload process from the beginning.")
     if file.filename == '':
-        return render_template('error.html', message="No selected file.")
+        return render_template('error.html', message="There are no files selected to upload. Please select an image first before proceeding. Make sure the file is selected on your device.")
     if file:
         try:
             img = Image.open(file.stream).convert('RGB')
@@ -43,7 +43,11 @@ def make_prediction():
                 probability_dict = f"{probabilities[max_idx] * 100:.1f}"
             except AttributeError:
                 probability_dict = {"info": "Probability scores not available"}
-            return render_template('result.html', prediction=predicted_label, probabilities=probability_dict)
+            return render_template('predicts.html', prediction=predicted_label, probabilities=probability_dict)
         except Exception as e:
-            return render_template('error.html', message=f"Error processing the file: {str(e)}")
-    return render_template('error.html', message="Invalid file format or content.")
+            return render_template('error.html', message=f"An error occurred while processing file: {str(e)}. Please try again or use a different file. If the error persists, report this issue.")
+    return render_template('error.html', message="Invalid file format or content. Make sure you upload an image in the correct format. Use JPG, PNG, or JPEG for best results.")
+
+@main_routes.route('/<path:unknown_path>')
+def handle_unknown_path(unknown_path):
+    return render_template('error.html', message=f"Page {unknown_path} not found. Please double check the URL you entered. Make sure the address is correct and matches the page available.")
