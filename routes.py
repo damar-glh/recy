@@ -1,8 +1,10 @@
+import os
 import numpy as np
 from PIL import Image
 from flask import Blueprint, request, render_template
 from model.model import cnn_feature_extractor_loaded, scaler_loaded, svm_clf_loaded, idx_to_label_loaded
 from keras_preprocessing.image import img_to_array
+from werkzeug.utils import secure_filename
 
 main_routes = Blueprint('main_routes', __name__)
 
@@ -16,14 +18,19 @@ def home():
 @main_routes.route('/predict', methods=['POST'])
 def make_prediction():
     if svm_clf_loaded is None or scaler_loaded is None or cnn_feature_extractor_loaded is None or idx_to_label_loaded is None:
-        return render_template('maintenance.html')
+        return render_template('control/maintenance.html')
     file = request.files['image']
     if 'image' not in request.files:
-        return render_template('error.html', message="Image file section not found in request. Make sure you uploaded the file through the form provided. Try restarting the upload process from the beginning.")
+        return render_template('control/error.html', message="Image file section not found in request. Make sure you uploaded the file through the form provided. Try restarting the upload process from the beginning.")
     if file.filename == '':
-        return render_template('error.html', message="There are no files selected to upload. Please select an image first before proceeding. Make sure the file is selected on your device.")
+        return render_template('control/error.html', message="There are no files selected to upload. Please select an image first before proceeding. Make sure the file is selected on your device.")
     if file:
         try:
+            uploaded_file = os.path.join('static/uploads', secure_filename(file.filename))
+            if not os.path.exists('static/uploads'):
+                os.makedirs('static/uploads')
+            file.save(uploaded_file)
+
             img = Image.open(file.stream).convert('RGB')
             img_resized = img.resize((IMG_WIDTH, IMG_HEIGHT))
             img_array = img_to_array(img_resized)
@@ -36,6 +43,7 @@ def make_prediction():
 
             prediction_index = svm_clf_loaded.predict(features_scaled)[0]
             predicted_label = idx_to_label_loaded.get(prediction_index, "Unknown")
+            predicted_label = predicted_label.capitalize()
 
             try:
                 probabilities = svm_clf_loaded.predict_proba(features_scaled)[0]
@@ -43,11 +51,15 @@ def make_prediction():
                 probability_dict = f"{probabilities[max_idx] * 100:.1f}"
             except AttributeError:
                 probability_dict = {"info": "Probability scores not available"}
-            return render_template('predicts.html', prediction=predicted_label, probabilities=probability_dict)
+            return render_template('predicts.html', prediction=predicted_label, probabilities=probability_dict, image_path=uploaded_file)
         except Exception as e:
-            return render_template('error.html', message=f"An error occurred while processing file: {str(e)}. Please try again or use a different file. If the error persists, report this issue.")
-    return render_template('error.html', message="Invalid file format or content. Make sure you upload an image in the correct format. Use JPG, PNG, or JPEG for best results.")
+            return render_template('control/error.html', message=f"An error occurred while processing file. Please try again or use a different file. If the error persists, report this issue.")
+    return render_template('control/error.html', message="Invalid file format or content. Make sure you upload an image in the correct format. Use JPG, PNG, or JPEG for best results.")
 
 @main_routes.route('/<path:unknown_path>')
 def handle_unknown_path(unknown_path):
-    return render_template('error.html', message=f"Page {unknown_path} not found. Please double check the URL you entered. Make sure the address is correct and matches the page available.")
+    return render_template('control/error.html', message=f"Page {unknown_path} not found. Please double check the URL you entered. Make sure the address is correct and matches the page available.")
+
+@main_routes.route('/cek_predict')
+def cek_predict():
+    return render_template('predicts.html')

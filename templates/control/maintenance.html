@@ -52,12 +52,12 @@
                 </svg>
             </div>
             <ul class="flex justify-around w-1/2">
-                <li><a href="/" class="text-darkgreen">Home</a></li>
-                <li><a href="/" class="text-darkgreen">About</a></li>
-                <li><a href="/" class="text-darkgreen">
+                <li><a href="/static" class="text-darkgreen">Home</a></li>
+                <li><a href="/static" class="text-darkgreen">About</a></li>
+                <li><a href="/static" class="text-darkgreen">
                     Classification
                 </a></li>
-                <li><a href="/" class="text-darkgreen">Contact</a></li>
+                <li><a href="/static" class="text-darkgreen">Contact</a></li>
             </ul>
             <div class="flex items-center gap-6">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -89,14 +89,14 @@
     </nav>
     <div class="flex flex-col items-center justify-center min-h-screen w-full gap-10">
         <div class="text-center flex flex-col items-center gap-5">
-            <h1 class="text-darkgreen font-extrabold">Page Not Found</h1>
-            <small class="max-w-5xl">{{ message }}</small>
+            <h1 class="text-darkgreen font-extrabold">Maintenance Time</h1>
+            <small class="max-w-5xl">The site is currently under maintenance to improve performance and stability. We apologize for any inconvenience. Please check back soon to access the service as usual.</small>
             <a href="/"
-               class="bg-oranye max-w-xs text-white px-8 py-4 rounded-full font-semibold cursor-pointer hover:bg-darkgreen transition-all duration-300">
+               class="bg-oranye max-w-xs text-white px-8 py-4 rounded-full font-semibold cursor-pointer shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:bg-darkgreen transition-all duration-300">
                 Go to Home
             </a>
         </div>
-        <img src="{{ url_for('static', filename='assets/404.svg') }}" alt="404-Image" class="w-1/2">
+        <img src="{{ url_for('static', filename='assets/maintanance.svg') }}" alt="404-Image" class="w-1/2">
         <small>Thank you for supporting recy, so <strong class="text-oranye font-bold">stay tuned</strong> .</small>
     </div>
 </div>

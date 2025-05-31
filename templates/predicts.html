@@ -88,63 +88,75 @@
             </div>
         </div>
     </nav>
-    
-    <section class="w-full min-h-screen flex flex-col justify-center items-center text-center">
-        <div class="bg-white shadow-xl rounded-3xl p-10 w-full max-w-3xl">
-            <div class="flex flex-col items-center mb-8">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                     stroke="#F29620"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                     class="mb-4">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                    <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-                <h1 class="text-darkgreen text-3xl font-extrabold mb-2">Hasil Klasifikasi</h1>
-                <p class="text-gray-600">Prediksi berhasil dilakukan</p>
-                <img src="{{ image_path }}" alt="Hasil Klasifikasi" class="mt-4 w-32 h-32 object-cover rounded-full shadow-lg">
-            </div>
-            
-            <div class="bg-gray-50 p-8 rounded-2xl mb-8">
-                <h2 class="text-2xl font-bold text-darkgreen mb-4">Sampah Terdeteksi:</h2>
-                <div class="bg-oranye text-white text-2xl font-bold py-4 px-6 rounded-xl inline-block">
-                    {{ prediction }}
-                </div>
-                <p class="mt-4 text-gray-600">Tingkat keyakinan: {{ probabilities }}%</p>
-            </div>
-
-            <p>{{ all_predictions }}</p>
-            
-            <div class="bg-gray-50 p-8 rounded-2xl mb-8">
-                <h3 class="text-xl font-bold text-darkgreen mb-4">Rekomendasi Penanganan:</h3>
-                <div class="text-left">
-                    {% if "Organik" in prediction %}
-                    <p class="mb-2">• Sampah organik dapat dikompos menjadi pupuk</p>
-                    <p class="mb-2">• Pisahkan dari sampah jenis lainnya</p>
-                    <p class="mb-2">• Dapat digunakan untuk budidaya tanaman</p>
-                    {% elif "Anorganik" in prediction %}
-                    <p class="mb-2">• Sampah anorganik sebaiknya dipisahkan berdasarkan jenisnya</p>
-                    <p class="mb-2">• Beberapa jenis dapat didaur ulang, seperti plastik dan kertas</p>
-                    <p class="mb-2">• Kurangi penggunaan barang sekali pakai</p>
-                    {% elif "B3" in prediction %}
-                    <p class="mb-2">• Sampah B3 harus ditangani khusus dan tidak boleh dibuang sembarangan</p>
-                    <p class="mb-2">• Bawa ke tempat pengolahan sampah B3 terdekat</p>
-                    <p class="mb-2">• Jangan dicampur dengan sampah rumah tangga biasa</p>
-                    {% elif "Daur Ulang" in prediction %}
-                    <p class="mb-2">• Sampah ini bisa didaur ulang menjadi produk baru</p>
-                    <p class="mb-2">• Kumpulkan dan serahkan ke bank sampah atau pengepul</p>
-                    <p class="mb-2">• Bisa menghasilkan nilai ekonomi tambahan</p>
-                    {% else %}
-                    <p class="mb-2">• Pisahkan sampah berdasarkan jenisnya</p>
-                    <p class="mb-2">• Kurangi penggunaan barang sekali pakai</p>
-                    <p class="mb-2">• Gunakan kembali barang yang masih layak pakai</p>
-                    {% endif %}
+    <section class="w-full min-h-screen flex flex-col justify-evenly items-center text-center gap-6">
+        <div class="flex flex-col items-center">
+            <img src="{{ url_for('static', filename='assets/file-check.svg') }}" alt="prediction icon">
+            <h1 class="text-darkgreen font-extrabold">Prediction Results</h1>
+            <small class="max-w-6xl">
+                Find complete information based on the predicted results of the type of waste you have uploaded.
+            </small>
+        </div>
+        <div class="flex flex-row justify-center items-start w-full gap-10">
+            <div class="flex flex-col relative w-1/2 items-start">
+                <!--                <img src="{{ image_path }}" alt="trash_image" class="w-full rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">-->
+                <img src="{{ url_for('static', filename='uploads/carboard_4.jpg') }}" alt="trash_image"
+                     class="w-full rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+                <div class="absolute w-2/5 flex flex-col justify-end items-start gap-4 p-6 bottom-0 left-0 bg-darkgreen text-white rounded-bl-3xl rounded-tr-3xl">
+                    <small class="font-bold">
+                        <img src="{{ url_for('static', filename='assets/file-image.svg') }}" alt="check icon"
+                             class="inline-block mr-2"> {{ prediction }} Waste
+                    </small>
+                    <small class="font-bold">
+                        <img src="{{ url_for('static', filename='assets/percent.svg') }}" alt="check icon"
+                             class="inline-block mr-2"> {{ probabilities }}% accuracy
+                    </small>
+                    <small class="font-bold">
+                        <img src="{{ url_for('static', filename='assets/check-circle.svg') }}" alt="check icon"
+                             class="inline-block mr-2"> Can Recycle
+                    </small>
                 </div>
             </div>
-            
-            <div class="flex justify-center mt-8">
-                <a href="/" class="bg-oranye text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-darkgreen transition-all duration-300">
-                    Kembali ke Beranda
-                </a>
+            <div class="w-1/2">
+                {% if "Organik" in prediction %}
+                <p class="mb-2">• Sampah organik dapat dikompos menjadi pupuk</p>
+                <p class="mb-2">• Pisahkan dari sampah jenis lainnya</p>
+                <p class="mb-2">• Dapat digunakan untuk budidaya tanaman</p>
+                {% elif "Anorganik" in prediction %}
+                <p class="mb-2">• Sampah anorganik sebaiknya dipisahkan berdasarkan jenisnya</p>
+                <p class="mb-2">• Beberapa jenis dapat didaur ulang, seperti plastik dan kertas</p>
+                <p class="mb-2">• Kurangi penggunaan barang sekali pakai</p>
+                {% elif "B3" in prediction %}
+                <p class="mb-2">• Sampah B3 harus ditangani khusus dan tidak boleh dibuang sembarangan</p>
+                <p class="mb-2">• Bawa ke tempat pengolahan sampah B3 terdekat</p>
+                <p class="mb-2">• Jangan dicampur dengan sampah rumah tangga biasa</p>
+                {% elif "Daur Ulang" in prediction %}
+                <p class="mb-2">• Sampah ini bisa didaur ulang menjadi produk baru</p>
+                <p class="mb-2">• Kumpulkan dan serahkan ke bank sampah atau pengepul</p>
+                <p class="mb-2">• Bisa menghasilkan nilai ekonomi tambahan</p>
+                {% else %}
+                {% include 'waste_types/default.html' %}
+                {% endif %}
+<!--                {% if "cardboard" in prediction %}-->
+<!--                {% include 'waste_types/cardboard.html' %}-->
+<!--                {% elif "organic" in prediction %}-->
+<!--                {% include 'waste_types/organic.html' %}-->
+<!--                {% elif "glass" in prediction %}-->
+<!--                {% include 'waste_types/glass.html' %}-->
+<!--                {% elif "metal" in prediction %}-->
+<!--                {% include 'waste_types/metal.html' %}-->
+<!--                {% elif "paper" in prediction %}-->
+<!--                {% include 'waste_types/paper.html' %}-->
+<!--                {% elif "plastic" in prediction %}-->
+<!--                {% include 'waste_types/plastic.html' %}-->
+<!--                {% else %}-->
+<!--                {% include 'waste_types/default.html' %}-->
+<!--                {% endif %}-->
+                <div class="flex justify-center mt-8">
+                    <a href="/"
+                       class="bg-oranye text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-darkgreen transition-all duration-300">
+                        Kembali ke Beranda
+                    </a>
+                </div>
             </div>
         </div>
     </section>
