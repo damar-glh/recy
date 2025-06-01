@@ -1,7 +1,7 @@
 import os
 import numpy as np
 from PIL import Image
-from flask import Blueprint, request, render_template
+from flask import Blueprint, request, render_template, json
 from model.model import cnn_feature_extractor_loaded, scaler_loaded, svm_clf_loaded, idx_to_label_loaded
 from keras_preprocessing.image import img_to_array
 from werkzeug.utils import secure_filename
@@ -13,7 +13,19 @@ IMG_HEIGHT = 512
 
 @main_routes.route('/')
 def home():
-    return render_template('index.html')
+    with open('static/assets/waste-categories/description.json', 'r', encoding='utf-8') as f:
+        description = json.load(f)
+    categories = [
+        {
+            'name': filename.split('.')[0].replace('_', ' ').capitalize(),
+            'image': f'static/assets/waste-categories/{filename}',
+            'description': description[filename.split('.')[0]]
+        }
+        for filename in os.listdir('static/assets/waste-categories')
+        if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.webp'))
+    ]
+    return render_template('index.html', categories=categories)
+
 
 @main_routes.route('/predict', methods=['POST'])
 def make_prediction():

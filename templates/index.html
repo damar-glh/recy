@@ -12,7 +12,8 @@
 <main class="bg-white w-full max-w-[1440px] mx-auto p-6 md:p-10">
     <section class="w-full min-h-screen flex flex-col justify-center text-center items-center gap-6 md:gap-12">
         <div class="flex flex-col items-center">
-            <img src="{{ url_for('static', filename='assets/logo_.svg') }}" alt="Recy Logo" class="w-12 h-12 md:w-14 md:h-14">
+            <img src="{{ url_for('static', filename='assets/logo_.svg') }}" alt="Recy Logo"
+                 class="w-12 h-12 md:w-14 md:h-14">
             <h1 class="text-darkgreen font-extrabold text-h3 md:text-h1">Trash Prediction</h1>
             <small class="max-w-6xl text-sm md:text-small">
                 Analyze images and provide appropriate waste management suggestions, from sorting to environmentally
@@ -66,6 +67,27 @@
                 By uploading your image, you agree to the Recy. <a href="/" class="text-oranye font-bold">Terms of
                 use </a> and <a href="/" class="text-oranye font-bold">Privacy Policy</a>.
             </small>
+        </div>
+    </section>
+    <section class="w-full min-h-screen flex flex-col justify-center text-center items-center gap-6 md:gap-12">
+        <div class="flex flex-col items-center">
+            <h1 class="text-darkgreen font-extrabold text-h3 md:text-h1">Trash Categories</h1>
+            <small class="max-w-6xl text-sm md:text-small">
+                Recy. can identify various types of waste. Each category has its own unique characteristics and
+                recycling methods.
+            </small>
+        </div>
+        <div class="max-w-7xl mx-auto w-full flex flex-col flex-wrap justify-center md:flex-row gap-12">
+            {% for category in categories %}
+            <div class="relative">
+                <img src="{{ category.image }}" alt="{{ category.name }}"
+                     class="w-full h-[375px] object-cover">
+                <div class="absolute bottom-0 left-0 right-0 p-6 bg-darkgreen text-white text-left">
+<!--                    <h5 class="font-extrabold">{{ category.name }}</h5>-->
+                    <small class="max-w-xs">{{ category.description }}</small>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </section>
 </main>
