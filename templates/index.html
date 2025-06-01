@@ -77,8 +77,17 @@
                 <img src="{{ category.image }}" alt="{{ category.name }}"
                      class="w-full md:w-[369px] h-[375px] object-cover">
                 <div class="absolute bottom-0 left-0 right-0 p-6 bg-darkgreen text-white text-left">
-                    <!--                    <h5 class="font-extrabold">{{ category.name }}</h5>-->
-                    <small class="max-w-xs">{{ category.description }}</small>
+                    <div class="flex items-start gap-2 mb-4">
+                        <h6 class="font-extrabold">{{ category.name }}</h6>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                             fill="#F29620"
+                             stroke="#182822" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="lucide lucide-circle-check-icon lucide-circle-check">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <small class="max-w-xs text-sm md:text-small">{{ category.description }}</small>
                 </div>
             </div>
             {% endfor %}
