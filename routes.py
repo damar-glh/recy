@@ -63,7 +63,17 @@ def make_prediction():
                 probability_dict = f"{probabilities[max_idx] * 100:.1f}"
             except AttributeError:
                 probability_dict = {"info": "Probability scores not available"}
-            return render_template('predicts.html', prediction=predicted_label, probabilities=probability_dict, image_path=uploaded_file)
+
+            we_do  = [
+                {
+                    "name": filename.split('.')[0].replace('_', ' ').capitalize(),
+                    "image": f"/static/assets/we-do/{predicted_label.lower()}/{filename}"
+                }
+                for filename in os.listdir("static/assets/we-do/"+ predicted_label.lower())
+                if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.webp'))
+            ]
+
+            return render_template('predicts.html', prediction=predicted_label, probabilities=probability_dict, image_path=uploaded_file, we_do=we_do)
         except Exception as e:
             return render_template('control/error.html', message=f"An error occurred while processing file. Please try again or use a different file. If the error persists, report this issue.")
     return render_template('control/error.html', message="Invalid file format or content. Make sure you upload an image in the correct format. Use JPG, PNG, or JPEG for best results.")

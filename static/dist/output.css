@@ -686,10 +686,6 @@ button {
   margin-top: 1.5rem;
 }
 
-.mt-8{
-  margin-top: 2rem;
-}
-
 .block{
   display: block;
 }
@@ -700,6 +696,10 @@ button {
 
 .flex{
   display: flex;
+}
+
+.table{
+  display: table;
 }
 
 .hidden{
@@ -738,8 +738,8 @@ button {
   width: 16rem;
 }
 
-.w-\[589px\]{
-  width: 589px;
+.w-\[369px\]{
+  width: 369px;
 }
 
 .w-full{
@@ -799,12 +799,12 @@ button {
   align-items: flex-start;
 }
 
-.items-center{
-  align-items: center;
+.items-end{
+  align-items: flex-end;
 }
 
-.justify-start{
-  justify-content: flex-start;
+.items-center{
+  align-items: center;
 }
 
 .justify-end{
@@ -869,10 +869,6 @@ button {
 
 .border-4{
   border-width: 4px;
-}
-
-.border-2{
-  border-width: 2px;
 }
 
 .border-t-2{
@@ -959,11 +955,6 @@ button {
   padding-bottom: 0.5rem;
 }
 
-.py-3{
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .py-4{
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -996,11 +987,6 @@ button {
 
 .text-h5{
   font-size: 24px;
-}
-
-.text-lg{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-sm{
@@ -1134,11 +1120,6 @@ button {
   background-color: rgb(255 247 237 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-oranye:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(242 150 32 / var(--tw-bg-opacity, 1));
-}
-
 .hover\:text-oranye:hover{
   --tw-text-opacity: 1;
   color: rgb(242 150 32 / var(--tw-text-opacity, 1));
@@ -1173,6 +1154,10 @@ button {
     height: 3.5rem;
   }
 
+  .md\:w-1\/2{
+    width: 50%;
+  }
+
   .md\:w-14{
     width: 3.5rem;
   }
@@ -1185,8 +1170,8 @@ button {
     width: 550px;
   }
 
-  .md\:w-1\/2{
-    width: 50%;
+  .md\:w-10\/12{
+    width: 83.333333%;
   }
 
   .md\:flex-row{
