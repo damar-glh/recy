@@ -33,7 +33,7 @@ module.exports = {
                 'h6': '20px',
                 'p': '20px',
                 'small': '16px',
-                'a': '16px',
+                'a': '14px',
             },
             fontWeight: {
                 'heading': '800',
