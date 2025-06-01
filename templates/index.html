@@ -23,7 +23,7 @@
         <div class="max-w-6xl mx-auto w-full">
             <form id="uploadForm" action="{{ url_for('main_routes.make_prediction') }}" method="POST"
                   enctype="multipart/form-data"
-                  class="flex flex-col items-center gap-12 border-2 border-dashed border-erieblack rounded-3xl p-12 md:p-24 text-center bg-gray-50 hover:border-oranye hover:bg-orange-50 transition-all duration-300">
+                  class="flex flex-col items-center gap-12 border-4 border-dashed border-erieblack rounded-3xl p-12 md:p-24 text-center bg-gray-50 hover:border-oranye hover:bg-orange-50 transition-all duration-300">
                 <h4 class="font-extrabold text-darkgreen max-w-md mx-auto text-h5 md:text-h4">
                     Drag and drop an image or <span class="text-oranye">browse to upload</span>.
                 </h4>
@@ -31,12 +31,6 @@
                 <label for="fileInput"
                        class="bg-oranye max-w-xs text-white px-4 md:px-8 py-2 md:py-4 rounded-full font-semibold cursor-pointer shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:bg-darkgreen transition-all duration-300">Upload
                     your photo</label>
-                {% if error_message %}
-                <div class="mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
-                     role="alert">
-                    <strong>Error:</strong> {{ error_message }}
-                </div>
-                {% endif %}
                 <small class="mt-12 block text-sm md:text-small" id="counter">
                     File must be in JPG, JPEG, PNG, or WEBP format and less than 5MB.
                 </small>
@@ -83,7 +77,7 @@
                 <img src="{{ category.image }}" alt="{{ category.name }}"
                      class="w-full md:w-[369px] h-[375px] object-cover">
                 <div class="absolute bottom-0 left-0 right-0 p-6 bg-darkgreen text-white text-left">
-<!--                    <h5 class="font-extrabold">{{ category.name }}</h5>-->
+                    <!--                    <h5 class="font-extrabold">{{ category.name }}</h5>-->
                     <small class="max-w-xs">{{ category.description }}</small>
                 </div>
             </div>
@@ -103,7 +97,7 @@
         cssClases: {
             error: ['text-red-500', 'font-bold'],
             normal: ['text-green-500'],
-            dragOver: ['border-4', 'border-oranye', 'bg-orange-50']
+            dragOver: ['border-oranye', 'bg-orange-50']
         }
     }
 
