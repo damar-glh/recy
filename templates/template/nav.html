@@ -1,4 +1,4 @@
-<nav class="max-w-[1440px] mx-auto p-6 md:p-10">
+<nav class="max-w-[1440px] mx-auto p-6 md:p-4 fixed top-0 left-0 right-0 z-50">
     <div class="flex justify-between items-center gap-4 md:gap-10">
         <div>
             <a href="/">
@@ -18,10 +18,10 @@
              class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 ease-in-out opacity-0"></div>
         <ul class="hidden md:flex justify-around w-1/2">
             <li><a href="/" class="text-darkgreen hover:text-oranye transition-colors duration-300">Home</a></li>
-            <li><a href="/" class="text-darkgreen hover:text-oranye transition-colors duration-300">About</a></li>
-            <li><a href="/" class="text-darkgreen hover:text-oranye transition-colors duration-300">Classification</a>
+            <li><a href="/about" class="text-darkgreen hover:text-oranye transition-colors duration-300">About</a></li>
+            <li><a href="/clasification" class="text-darkgreen hover:text-oranye transition-colors duration-300">Classification</a>
             </li>
-            <li><a href="/" class="text-darkgreen hover:text-oranye transition-colors duration-300">Contact</a></li>
+            <li><a href="/contact" class="text-darkgreen hover:text-oranye transition-colors duration-300">Contact</a></li>
         </ul>
         <div id="side-menu"
              class="fixed top-0 right-0 w-64 h-full bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-lg flex flex-col">
@@ -34,11 +34,11 @@
                 </svg>
                 <li><a href="/"
                        class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Home</a></li>
-                <li><a href="/"
+                <li><a href="/about"
                        class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">About</a></li>
-                <li><a href="/" class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Classification</a>
+                <li><a href="/clasification" class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Classification</a>
                 </li>
-                <li><a href="/" class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Contact</a>
+                <li><a href="/contact" class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Contact</a>
                 </li>
             </ul>
         </div>
@@ -74,6 +74,7 @@
 
         class Menu {
             constructor() {
+                this.nav = document.querySelector('nav');
                 this.menuToggle = document.getElementById('menu-toggle');
                 this.sideMenu = document.getElementById('side-menu');
                 this.menuOverlay = document.getElementById('menu-overlay');

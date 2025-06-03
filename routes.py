@@ -8,11 +8,8 @@ from werkzeug.utils import secure_filename
 
 main_routes = Blueprint('main_routes', __name__)
 
-IMG_WIDTH = 384
-IMG_HEIGHT = 512
-
 @main_routes.route('/')
-def home():
+def index():
     with open('static/assets/waste-categories/description.json', 'r', encoding='utf-8') as f:
         description = json.load(f)
     categories = [
@@ -26,7 +23,20 @@ def home():
     ]
     return render_template('index.html', categories=categories)
 
+@main_routes.route('/about')
+def about():
+    return render_template('about.html')
 
+@main_routes.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@main_routes.route('/clasification')
+def clasification():
+    return render_template('clasification.html')
+
+IMG_WIDTH = 384
+IMG_HEIGHT = 512
 @main_routes.route('/predict', methods=['POST'])
 def make_prediction():
     if svm_clf_loaded is None or scaler_loaded is None or cnn_feature_extractor_loaded is None or idx_to_label_loaded is None:
@@ -81,7 +91,3 @@ def make_prediction():
 @main_routes.route('/<path:unknown_path>')
 def handle_unknown_path(unknown_path):
     return render_template('control/error.html', message=f"Page {unknown_path} not found. Please double check the URL you entered. Make sure the address is correct and matches the page available.")
-
-@main_routes.route('/cek_predict')
-def cek_predict():
-    return render_template('predicts.html')

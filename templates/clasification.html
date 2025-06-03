@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recy.</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/logo/logo.svg') }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
+</head>
+<body>
+{% include 'template/nav.html' %}
+<main class="bg-white w-full max-w-[1440px] mx-auto p-6 md:p-10">
+    <section class="w-full min-h-screen flex flex-col justify-center text-center items-center gap-6 md:gap-12">
+        <div class="flex flex-col items-center">
+            <img src="{{ url_for('static', filename='assets/logo/logo_.svg') }}" alt="Recy Logo"
+                 class="w-12 h-12 md:w-14 md:h-14">
+            <h1 class="text-darkgreen font-extrabold text-h3 md:text-h1">Trash Prediction</h1>
+            <small class="max-w-6xl text-sm md:text-small">
+                Analyze images and provide appropriate waste management suggestions, from sorting to environmentally
+                friendly recycling methods etc.
+            </small>
+        </div>
+        <div class="max-w-6xl mx-auto w-full">
+            <form id="uploadForm" action="{{ url_for('main_routes.make_prediction') }}" method="POST"
+                  enctype="multipart/form-data"
+                  class="flex flex-col items-center gap-10 border-4 border-dashed border-erieblack rounded-3xl p-10 md:p-20 text-center bg-gray-50 hover:border-oranye hover:bg-orange-50 transition-all duration-300">
+                <h4 class="font-extrabold text-darkgreen max-w-md mx-auto text-h5 md:text-h4">
+                    Drag and drop an image or <span class="text-oranye">browse to upload</span>.
+                </h4>
+                <input type="file" name="image" id="fileInput" class="hidden" accept=".jpg, .jpeg, .png, .webp">
+                <label for="fileInput"
+                       class="bg-oranye max-w-xs text-white px-4 md:px-8 py-2 md:py-4 rounded-full font-semibold cursor-pointer shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:bg-darkgreen transition-all duration-300">Upload
+                    your photo</label>
+                <small class="mt-12 block text-sm md:text-small" id="counter">
+                    File must be in JPG, JPEG, PNG, or WEBP format and less than 5MB.
+                </small>
+                <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-12">
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                             fill="#182822"
+                             stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="lucide lucide-circle-check-icon lucide-circle-check">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                        <small class="text-sm md:text-small">No credit card required</small>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                             fill="#182822"
+                             stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="lucide lucide-circle-check-icon lucide-circle-check">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                        <small class="text-sm md:text-small">Free to use</small>
+                    </div>
+                </div>
+            </form>
+            <small class="mt-6 block text-darkgreen text-sm md:text-small">
+                By uploading your image, you agree to the Recy. <a href="/" class="text-oranye font-bold">Terms of
+                use </a> and <a href="/" class="text-oranye font-bold">Privacy Policy</a>.
+            </small>
+        </div>
+    </section>
+</main>
+{% include 'template/footer.html' %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        new FileUploadHandler();
+    })
+
+    const CONFIG = {
+        maxFileSize: 5 * 1024 * 1024,
+        allowedFileTypes: ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'],
+        cssClases: {
+            error: ['text-red-500', 'font-bold'],
+            normal: ['text-green-500'],
+            dragOver: ['border-oranye', 'bg-orange-50']
+        }
+    }
+
+    class FileUploadHandler {
+        constructor() {
+            this.uploadForm = document.getElementById('uploadForm');
+            this.fileInput = document.getElementById('fileInput');
+            this.counter = document.getElementById('counter');
+
+            this.initializeEventListeners();
+        }
+
+        initializeEventListeners() {
+            this.uploadForm.addEventListener('change', (e) => this.handleFileChange(e));
+            this.uploadForm.addEventListener('dragover', (e) => this.handleDragOver(e));
+            this.uploadForm.addEventListener('dragleave', (e) => this.handleDragLeave(e));
+            this.uploadForm.addEventListener('drop', (e) => this.handleDrop(e));
+
+        }
+
+        validateFile(file) {
+            return this.checkFileSize(file) && this.checkFileType(file);
+        }
+
+        checkFileSize(file) {
+            if (file.size > CONFIG.maxFileSize) {
+                this.showError();
+                return false;
+            }
+            return true;
+        }
+
+        checkFileType(file) {
+            if (!CONFIG.allowedFileTypes.includes(file.type)) {
+                this.showError();
+                return false;
+            }
+            return true;
+        }
+
+        showError() {
+            this.counter.classList.remove(...CONFIG.cssClases.normal);
+            this.counter.classList.add(...CONFIG.cssClases.error);
+        }
+
+        handleFileChange(e) {
+            e.preventDefault();
+            const file = e.target.files[0];
+            this.processFile(file);
+        }
+
+        handleDragOver(e) {
+            e.preventDefault();
+            this.uploadForm.classList.add(...CONFIG.cssClases.dragOver);
+        }
+
+        handleDragLeave(e) {
+            e.preventDefault();
+            this.uploadForm.classList.remove(...CONFIG.cssClases.dragOver);
+        }
+
+        handleDrop(e) {
+            e.preventDefault();
+            this.uploadForm.classList.remove(...CONFIG.cssClases.dragOver);
+
+            const file = e.dataTransfer.files[0];
+            const newDataTransfer = new DataTransfer();
+            newDataTransfer.items.add(file);
+            this.fileInput.files = newDataTransfer.files;
+
+            this.processFile(file);
+        }
+
+        processFile(file) {
+            try {
+                if (this.validateFile(file)) {
+                    this.uploadForm.submit();
+                }
+            } catch (error) {
+                console.error('Error processing file:', error);
+            }
+        }
+    }
+</script>
+</body>
+</html>
