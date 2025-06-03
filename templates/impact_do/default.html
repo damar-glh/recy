@@ -1,0 +1,56 @@
+<div class="w-full flex flex-col items-start gap-6">
+    <div class="text-left flex flex-col items-start gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Environmental Impact</h4>
+        <small class="text-justify text-sm md:text-small">
+            Mixed or unidentified waste presents significant environmental challenges as it often contains materials
+            with different properties and disposal requirements. When improperly sorted, recyclable or compostable
+            materials end up in landfills, taking up space and potentially releasing harmful substances. The combined
+            environmental impact includes resource depletion, pollution, and increased greenhouse gas emissions from
+            processing and transporting waste.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Contamination: mixed waste reduces the recyclability of potentially
+                valuable materials</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Resource loss: valuable materials are lost when sent to landfills or
+                incinerators</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Processing difficulties: mixed waste requires more energy and resources
+                to separate and process</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Unknown hazards: unidentified waste may contain harmful substances that
+                can leach into the environment</small>
+        </div>
+    </div>
+</div>
+<div class="w-full flex flex-col items-end gap-12">
+    <div class="flex flex-col items-end gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">What can we do?</h4>
+        <small class="text-justify text-sm md:text-small">
+            We can improve waste sorting at the source, learn about local recycling guidelines, and reduce consumption
+            of items with complex or mixed materials. When in doubt about how to dispose of an item, consult local waste
+            management resources rather than risking contamination of recycling streams.
+        </small>
+    </div>
+    <div class="w-full flex flex-col md:flex-row flex-wrap items-center justify-center gap-12">
+        {% for item in we_do %}
+        <img src="{{ item.image }}" alt="{{ item.name }}"
+             class="w-full md:w-[369px] h-[246px] object-cover rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+        {% endfor %}
+    </div>
+    <small class="text-justify text-sm md:text-small">
+        For items that are difficult to categorize, we can explore specialized recycling programs for materials like
+        electronics, batteries, textiles, and composite packaging. Many communities offer collection events for
+        hard-to-recycle items. Before discarding, consider if the item can be repaired, donated, or repurposed into
+        something useful regardless of its material composition.
+    </small>
+</div>

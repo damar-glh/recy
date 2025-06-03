@@ -1,0 +1,32 @@
+<div class="flex flex-col items-start gap-6">
+    <div class="flex flex-col items-start gap-4">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Waste Type: {{ prediction }}</h4>
+        <small class="text-justify">
+            Paper is a versatile and widely used material made from wood pulp fibers, commonly found in books, newspapers, 
+            magazines, office documents, and packaging materials. Paper waste is biodegradable and highly recyclable, 
+            making it an environmentally friendly option when properly managed. However, paper production contributes to 
+            deforestation and requires significant water and energy resources. When paper ends up in landfills, it decomposes 
+            and produces methane, a potent greenhouse gas. Recycling paper saves trees, reduces water pollution, and uses 
+            less energy than creating new paper products. Each ton of recycled paper can save approximately 17 trees, 
+            7,000 gallons of water, and enough energy to power an average home for six months.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Common types: printer paper, newspaper, cardstock, tissue paper, magazine paper</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Strengths: lightweight, biodegradable, highly recyclable</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Major concern: deforestation, water pollution from production process</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Best practice: recycle whenever possible, use both sides of paper, choose recycled paper products</small>
+        </div>
+    </div>
+</div>

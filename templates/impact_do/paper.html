@@ -1,0 +1,54 @@
+<div class="w-full flex flex-col items-start gap-6">
+    <div class="text-left flex flex-col items-start gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Environmental Impact</h4>
+        <small class="text-justify text-sm md:text-small">
+            Paper production contributes to deforestation, biodiversity loss, and water pollution. The paper industry is
+            the third largest industrial emitter of greenhouse gases globally and uses vast amounts of water in
+            manufacturing processes. When paper decomposes in landfills, it produces methane. However, paper is
+            biodegradable and recyclable, making proper disposal crucial for minimizing environmental impact.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Deforestation: paper production is a major driver of forest loss in
+                some regions</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Water usage: paper manufacturing requires 10 liters of water per A4
+                sheet on average</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Chemical pollution: pulping and bleaching processes release chlorine
+                compounds and other toxins</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Energy consumption: the pulp and paper industry is the fifth largest
+                consumer of energy globally</small>
+        </div>
+    </div>
+</div>
+<div class="w-full flex flex-col items-end gap-12">
+    <div class="flex flex-col items-end gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">What can we do?</h4>
+        <small class="text-justify text-sm md:text-small">
+            We can reduce paper waste by going digital when possible, printing on both sides, reusing single-sided
+            paper, and ensuring proper recycling. Choosing recycled paper products and those certified by sustainable
+            forestry programs also helps minimize environmental impact.
+        </small>
+    </div>
+    <div class="w-full flex flex-col md:flex-row flex-wrap items-center justify-center gap-12">
+        {% for item in we_do %}
+        <img src="{{ item.image }}" alt="{{ item.name }}"
+             class="w-full md:w-[369px] h-[246px] object-cover rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+        {% endfor %}
+    </div>
+    <small class="text-justify text-sm md:text-small">
+        Used paper can be transformed into handmade recycled paper, origami art, papier-mâché crafts, and decorative
+        items. Newspaper can be used for seed starters, compost material, or eco-friendly gift wrap. By finding creative
+        ways to reuse paper before recycling, we extend its useful life and reduce the demand for virgin paper products.
+    </small>
+</div>

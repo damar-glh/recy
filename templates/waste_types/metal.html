@@ -1,0 +1,33 @@
+<div class="flex flex-col items-start gap-6">
+    <div class="flex flex-col items-start gap-4">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Waste Type: {{ prediction }}</h4>
+        <small class="text-justify">
+            Metal waste consists of discarded items made from various metals, including aluminum, steel, copper, brass, 
+            and other metallic elements. Unlike many other waste materials, metals are highly recyclable and can be 
+            processed repeatedly without degrading their quality or properties. Mining and processing raw metals requires 
+            substantial energy and creates environmental impacts, making metal recycling particularly valuable. When recycled, 
+            metals save up to 95% of the energy required to produce them from virgin materials. Additionally, metal recycling 
+            reduces greenhouse gas emissions, conserves natural resources, and decreases the volume of waste in landfills. 
+            Metals do not degrade in landfills and can potentially leach harmful elements into soil and groundwater if not 
+            properly managed.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Common types: aluminum (cans, foil), steel, copper, brass, tin, iron</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Strengths: highly durable, infinitely recyclable without quality loss, valuable commodities</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Major concern: energy-intensive initial production, potential toxicity from some metal compounds</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Best practice: separate from other waste streams, bring to specialized recycling facilities, clean before recycling</small>
+        </div>
+    </div>
+</div>

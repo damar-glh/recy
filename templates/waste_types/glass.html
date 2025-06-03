@@ -1,0 +1,33 @@
+<div class="flex flex-col items-start gap-6">
+    <div class="flex flex-col items-start gap-4">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Waste Type: {{ prediction }}</h4>
+        <small class="text-justify">
+            Glass is a versatile, inert material made primarily from sand (silica), soda ash, and limestone. Commonly used 
+            for containers, windows, tableware, and decorative items, glass offers exceptional durability and doesn't degrade 
+            over time. Unlike many materials, glass can be recycled indefinitely without loss of quality or purity, making it 
+            an excellent candidate for closed-loop recycling systems. When properly recycled, glass helps conserve raw materials, 
+            reduces energy consumption, and decreases greenhouse gas emissions compared to producing new glass. However, when 
+            glass ends up in landfills, it remains there indefinitely since it doesn't biodegrade. Proper handling of glass 
+            waste is important as broken glass can pose safety hazards to waste management workers and contaminate other 
+            recyclable materials.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Common types: clear glass, green glass, brown glass, blue glass, tempered glass</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Strengths: impermeable, chemically inert, infinitely recyclable without quality loss</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Major concern: safety hazards when broken, heavy to transport, energy-intensive production</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Best practice: rinse before recycling, separate by color when possible, reuse glass containers</small>
+        </div>
+    </div>
+</div>

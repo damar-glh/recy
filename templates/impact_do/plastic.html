@@ -1,0 +1,56 @@
+<div class="w-full flex flex-col items-start gap-6">
+    <div class="text-left flex flex-col items-start gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Environmental Impact</h4>
+        <small class="text-justify text-sm md:text-small">
+            Plastic can persist for hundreds of years, breaking down into microplastics that contaminate
+            ecosystems
+            and even enter our food and water. Proper recycling and waste management are crucial to mitigate
+            these
+            effects. By choosing recyclable plastics and supporting closed-loop systems, we can reduce plastic
+            pollution and its harmful impact on the environment.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Microplastics are now found in oceans, rivers, air, and even
+                table salt</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Threat to wildlife: ingestion and entanglement</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Human health risks: possible hormonal disruption, cellular
+                damage, immune system effects</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Climate impact: plastic production and incineration release
+                high greenhouse gas emissions</small>
+        </div>
+    </div>
+</div>
+<div class="w-full flex flex-col items-end gap-12">
+    <div class="flex flex-col items-end gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">What can we do?</h4>
+        <small class="text-justify text-sm md:text-small">
+            We can reduce plastic pollution by choosing recyclable plastics, supporting closed-loop systems, and
+            making
+            proper waste management decisions.
+        </small>
+    </div>
+    <div class="w-full flex flex-col md:flex-row flex-wrap items-center justify-center gap-12">
+        {% for item in we_do %}
+        <img src="{{ item.image }}" alt="{{ item.name }}"
+             class="w-full md:w-[369px] h-[246px] object-cover rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+        {% endfor %}
+    </div>
+    <small class="text-justify text-sm md:text-small">
+        We can help reduce plastic waste by making crafts from plastic bottles, containers, and packaging. Creative
+        reuse
+        extends the life of plastic items before they end up in landfills. Additionally, choosing reusable alternatives
+        like cloth bags, metal water bottles, and glass containers reduces our reliance on single-use plastics.
+    </small>
+</div>

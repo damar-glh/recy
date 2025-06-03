@@ -1,0 +1,55 @@
+<div class="w-full flex flex-col items-start gap-6">
+    <div class="text-left flex flex-col items-start gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Environmental Impact</h4>
+        <small class="text-justify text-sm md:text-small">
+            Organic waste is biodegradable, but when sent to landfills, it decomposes without oxygen (anaerobically),
+            producing methane—a greenhouse gas 25 times more potent than carbon dioxide. Additionally, nutrients that
+            could enrich soil are wasted. Food waste specifically represents a significant loss of resources including
+            water, energy, land, and labor used in food production, processing, and transportation.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Methane emissions: organic waste in landfills is a major source of this
+                potent greenhouse gas</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Resource waste: discarded food represents wasted water, energy, and
+                agricultural inputs</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Leachate production: decomposing organics in landfills create liquid
+                that can contaminate groundwater</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Lost opportunity: valuable nutrients that could rebuild soil health are
+                discarded</small>
+        </div>
+    </div>
+</div>
+<div class="w-full flex flex-col items-end gap-12">
+    <div class="flex flex-col items-end gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">What can we do?</h4>
+        <small class="text-justify text-sm md:text-small">
+            We can compost organic waste at home or through community programs, plan meals carefully to reduce food
+            waste, and store food properly to extend its shelf life. Learning to use food scraps creatively in cooking
+            also minimizes waste.
+        </small>
+    </div>
+    <div class="w-full flex flex-col md:flex-row flex-wrap items-center justify-center gap-12">
+        {% for item in we_do %}
+        <img src="{{ item.image }}" alt="{{ item.name }}"
+             class="w-full md:w-[369px] h-[246px] object-cover rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+        {% endfor %}
+    </div>
+    <small class="text-justify text-sm md:text-small">
+        Home composting turns kitchen scraps and yard waste into nutrient-rich soil for gardens. Many food scraps like
+        citrus peels can be used to make natural cleaning products, while coffee grounds serve as garden fertilizer or
+        natural deodorizers. By diverting organic waste from landfills, we reduce methane emissions and complete the
+        natural nutrient cycle.
+    </small>
+</div>

@@ -1,0 +1,55 @@
+<div class="w-full flex flex-col items-start gap-6">
+    <div class="text-left flex flex-col items-start gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Environmental Impact</h4>
+        <small class="text-justify text-sm md:text-small">
+            Cardboard is biodegradable and generally more environmentally friendly than plastic packaging. However, when
+            cardboard ends up in landfills without proper oxygen circulation, it decomposes anaerobically, producing
+            methane—a potent greenhouse gas. The paper industry is also resource-intensive, requiring significant wood,
+            water, and energy inputs. When properly recycled, cardboard reduces deforestation pressure and uses 75% less
+            energy than producing new cardboard.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Deforestation: cardboard production contributes to forest loss when not
+                sourced sustainably</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Water usage: manufacturing requires significant water resources and can
+                cause water pollution</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Landfill impact: when not recycled, cardboard takes up valuable
+                landfill space</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Chemical treatments: some cardboard contains waxes, dyes, or other
+                treatments that affect recyclability</small>
+        </div>
+    </div>
+</div>
+<div class="w-full flex flex-col items-end gap-12">
+    <div class="flex flex-col items-end gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">What can we do?</h4>
+        <small class="text-justify text-sm md:text-small">
+            We can maximize cardboard recycling by flattening boxes, keeping cardboard dry and clean, and removing
+            non-paper elements like tape and staples. Choosing products with minimal packaging and reusing cardboard
+            boxes whenever possible also reduces waste.
+        </small>
+    </div>
+    <div class="w-full flex flex-col md:flex-row flex-wrap items-center justify-center gap-12">
+        {% for item in we_do %}
+        <img src="{{ item.image }}" alt="{{ item.name }}"
+             class="w-full md:w-[369px] h-[246px] object-cover rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+        {% endfor %}
+    </div>
+    <small class="text-justify text-sm md:text-small">
+        Cardboard can be repurposed into furniture, storage solutions, children's toys, and garden seed starters.
+        Corrugated cardboard makes excellent compost material when shredded and can be used as garden mulch. By finding
+        creative ways to reuse cardboard, we extend its lifecycle and prevent the need for new resources.
+    </small>
+</div>

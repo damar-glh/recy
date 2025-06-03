@@ -1,0 +1,43 @@
+<div class="w-full flex flex-col items-start gap-6">
+            <div class="text-left flex flex-col items-start gap-6">
+                <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Environmental Impact</h4>
+                <small class="text-justify text-sm md:text-small">
+                    Metal mining and production cause significant environmental damage through habitat destruction, water pollution, and high energy consumption. However, metals have the advantage of being infinitely recyclable without losing quality. When metals end up in landfills, they can take hundreds or thousands of years to break down, and some metals can leach harmful compounds into soil and groundwater.
+                </small>
+            </div>
+            <div class="flex flex-col text-left items-start gap-6">
+                <div class="flex items-center gap-4">
+                    <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+                    <small class="text-sm md:text-small">Mining impacts: destruction of natural habitats, acid mine drainage, and soil contamination</small>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+                    <small class="text-sm md:text-small">Energy intensity: metal production requires significant energy, contributing to carbon emissions</small>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+                    <small class="text-sm md:text-small">Toxic leaching: some metals can release hazardous compounds into soil and water systems</small>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+                    <small class="text-sm md:text-small">Resource depletion: finite metal resources become more difficult and environmentally costly to extract</small>
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex flex-col items-end gap-12">
+            <div class="flex flex-col items-end gap-6">
+                <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">What can we do?</h4>
+                <small class="text-justify text-sm md:text-small">
+                    We can ensure metals are properly recycled, choose products made from recycled metals, and maintain metal items to extend their useful life. Metal recycling saves up to 95% of the energy needed to produce metals from raw materials.
+                </small>
+            </div>
+            <div class="w-full flex flex-col md:flex-row flex-wrap items-center justify-center gap-12">
+                {% for item in we_do %}
+                <img src="{{ item.image }}" alt="{{ item.name }}"
+                     class="w-full md:w-[369px] h-[246px] object-cover rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+                {% endfor %}
+            </div>
+            <small class="text-justify text-sm md:text-small">
+                Metal items like cans, bottle caps, and hardware can be transformed into jewelry, wind chimes, garden art, and decorative items. Aluminum cans can be used to make solar cookers or camping stoves. By repurposing metal waste, we conserve the significant resources required for mining and refining new metals while keeping valuable materials in circulation.
+            </small>
+        </div>

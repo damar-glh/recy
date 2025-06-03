@@ -1,0 +1,53 @@
+<div class="w-full flex flex-col items-start gap-6">
+    <div class="text-left flex flex-col items-start gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Environmental Impact</h4>
+        <small class="text-justify text-sm md:text-small">
+            Glass is inert and doesn't release harmful chemicals into the environment. However, glass manufacturing is
+            energy-intensive, and when improperly disposed of, glass persists indefinitely in landfills. Glass takes
+            over a million years to decompose naturally. When recycled, glass saves significant energy compared to
+            producing new glass from raw materials and can be recycled infinitely without loss of quality.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Energy use: manufacturing glass requires high temperatures and
+                significant energy</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Resource extraction: mining sand, limestone, and other raw materials
+                causes habitat disruption</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Transportation emissions: glass is heavy, requiring more fuel to
+                transport</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Safety hazards: broken glass can injure wildlife and contaminate other
+                recyclables</small>
+        </div>
+    </div>
+</div>
+<div class="w-full flex flex-col items-end gap-12">
+    <div class="flex flex-col items-end gap-6">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">What can we do?</h4>
+        <small class="text-justify text-sm md:text-small">
+            We can minimize glass waste by reusing glass containers for storage, choosing products in glass over plastic
+            when appropriate, and ensuring proper recycling by separating glass by color when required.
+        </small>
+    </div>
+    <div class="w-full flex flex-col md:flex-row flex-wrap items-center justify-center gap-12">
+        {% for item in we_do %}
+        <img src="{{ item.image }}" alt="{{ item.name }}"
+             class="w-full md:w-[369px] h-[246px] object-cover rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
+        {% endfor %}
+    </div>
+    <small class="text-justify text-sm md:text-small">
+        Glass jars and bottles can be transformed into beautiful home decor, vases, candle holders, or storage
+        containers. Colorful glass pieces can be used in mosaics and art projects. By reusing glass items, we reduce the
+        energy needed for producing new glass while keeping these durable materials out of landfills.
+    </small>
+</div>

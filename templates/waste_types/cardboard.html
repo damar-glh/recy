@@ -1,0 +1,33 @@
+<div class="flex flex-col items-start gap-6">
+    <div class="flex flex-col items-start gap-4">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Waste Type: {{ prediction }}</h4>
+        <small class="text-justify">
+            Cardboard is a durable, versatile paper-based material commonly used for packaging, shipping containers, 
+            and various consumer products. Made from wood pulp fibers, cardboard is thicker and more rigid than standard 
+            paper, providing strength and protection while remaining relatively lightweight. As a biodegradable material, 
+            cardboard naturally breaks down over time when exposed to environmental elements. Recycling cardboard is highly 
+            efficient and beneficial, as it can be processed 5-7 times before the fibers become too short for further use. 
+            Each ton of recycled cardboard saves about 17 trees, 7,000 gallons of water, and 4,000 kilowatt-hours of electricity. 
+            When contaminated with food, oils, or other substances, cardboard's recyclability decreases, highlighting the 
+            importance of keeping cardboard clean and dry before recycling.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Common types: corrugated cardboard, paperboard, chipboard, boxboard, folding cartons</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Strengths: lightweight yet strong, biodegradable, highly recyclable, cost-effective</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Major concern: loses integrity when wet, can be contaminated by food or grease</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Best practice: flatten before recycling, keep dry and clean, remove tape and labels when possible</small>
+        </div>
+    </div>
+</div>

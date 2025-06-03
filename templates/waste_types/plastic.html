@@ -1,0 +1,38 @@
+<div class="flex flex-col items-start gap-6">
+    <div class="flex flex-col items-start gap-4">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Waste Type: {{ prediction }}</h4>
+        <small class="text-justify">
+            Plastic is a versatile, durable, and widely used material, commonly found in packaging, containers,
+            electronics, and household items. Despite its convenience, plastic poses a serious environmental challenge
+            due to its non-biodegradable nature. Improper disposal leads to plastic accumulating in landfills and
+            oceans, where it can persist for hundreds of years. Over time, it breaks down into microplastics, which pose
+            risks to ecosystems and can enter the human food chain. Plastic is a versatile, durable, and widely used
+            material, commonly found in packaging, containers, electronics, and household items. Despite its
+            convenience, plastic poses a serious environmental challenge
+            due to its non-biodegradable nature. Improper disposal leads to plastic accumulating in landfills and
+            oceans, where it can persist for hundreds of years. Over time, it breaks down into microplastics, which pose
+            risks to ecosystems and can enter the human food chain.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Common types: PET (#1), HDPE (#2), PVC (#3), LDPE (#4), PP (#5), PS
+                (#6), and others</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Strengths: strong, cheap, water-resistant</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Major concern: non-biodegradable and often not properly
+                recycled</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Best practice: choose plastics with higher recyclability and support
+                closed-loop recycling</small>
+        </div>
+    </div>
+</div>

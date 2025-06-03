@@ -1,0 +1,32 @@
+<div class="flex flex-col items-start gap-6">
+    <div class="flex flex-col items-start gap-4">
+        <h4 class="text-darkgreen font-extrabold text-h5 md:text-h4">Waste Type: {{ prediction }}</h4>
+        <small class="text-justify">
+            Organic waste comprises biodegradable materials derived from plant or animal sources, including food scraps, 
+            yard trimmings, agricultural residues, and other compostable materials. Unlike synthetic waste, organic waste 
+            naturally decomposes through biological processes, returning valuable nutrients to the soil. When improperly 
+            disposed of in landfills, organic waste produces methane, a potent greenhouse gas contributing to climate change. 
+            However, when composted, it creates nutrient-rich soil amendments that improve soil health and reduce the need 
+            for chemical fertilizers. Composting organic waste diverts a significant portion of municipal solid waste from 
+            landfills, reducing environmental impact while creating a valuable resource for gardens and agriculture.
+        </small>
+    </div>
+    <div class="flex flex-col text-left items-start gap-6">
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Common types: food scraps, yard waste, agricultural residues, compostable paper, natural fibers</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Strengths: naturally biodegradable, can be converted into valuable compost</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Major concern: produces methane in landfills, contributing to greenhouse gas emissions</small>
+        </div>
+        <div class="flex items-center gap-4">
+            <img src="{{ url_for('static', filename='assets/icon-prediction/circle.svg') }}" alt="check icon">
+            <small class="text-sm md:text-small">Best practice: home composting, separating from other waste streams, supporting municipal composting programs</small>
+        </div>
+    </div>
+</div>
