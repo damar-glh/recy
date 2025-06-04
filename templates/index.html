@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recy.</title>
-    <meta name="description"
-          content="Join our initiative to create a cleaner, greener world through proper waste management and recycling practices.">
     <link rel="icon" href="{{ url_for('static', filename='assets/logo/logo.svg') }}" type="image/svg+xml">
     <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
 </head>
@@ -13,26 +11,28 @@
 {% include 'template/nav.html' %}
 <main class="w-full max-w-[1440px] mx-auto p-10">
     <section class="w-full min-h-screen flex flex-col justify-center items-center text-center gap-12">
-        <div class="flex flex-col md:flex-row items-start justify-center">
+        <div class="flex flex-col md:flex-row items-center justify-center">
             <img src="{{ url_for('static', filename='assets/bg/bg-hero.jpg') }}" alt="Background Hero"
-                      class="w-full h-full object-cover absolute inset-0 opacity-20 -z-10">
-            <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-left">
-                <h1 class="text-h2 md:text-h1 font-extrabold">Recycle Today for a <span class="text-oranye">Better Tomorrow</span>
+                      class="w-full h-full object-cover absolute inset-0 -z-10">
+            <div class="absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-100 -z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-white to-transparent opacity-50 -z-10"></div>
+            <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-left gap-8">
+                <h1 class="text-white font-extrabold text-h3 md:text-h1">Recycle Today for a <span class="text-oranye">Better Tomorrow</span>
                 </h1>
-                <p class="mb-8 opacity-90">Join our initiative to create a cleaner, greener world through proper waste
+                <p class="text-sm md:text-p opacity-90 leading-8">Join our initiative to create a cleaner, greener world through proper waste
                     management and recycling practices.</p>
-                <div class="flex flex-col sm:flex-row gap-4">
+                <div class="flex gap-6">
                     <a href="/clasification"
-                       class="bg-oranye hover:bg-opacity-90 text-white font-link py-3 px-8 rounded-full transition-all duration-300 text-center">
+                       class="bg-oranye max-w-xs text-white px-4 md:px-8 py-2 md:py-4 rounded-full font-semibold cursor-pointer shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:bg-darkgreen transition-all duration-300">
                         Classify Now
                     </a>
                     <a href="/about"
-                       class="border-2 border-white hover:border-pechyellow hover:text-pechyellow text-white font-link py-3 px-8 rounded-full transition-all duration-300 text-center">
+                       class="bg-white max-w-xs text-oranye hover:text-white px-4 md:px-8 py-2 md:py-4 rounded-full font-semibold cursor-pointer shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:bg-darkgreen transition-all duration-300">
                         Learn More
                     </a>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 flex justify-center">
+            <div class="w-full md:w-1/2 md:flex justify-center hidden">
                 <div class="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-white bg-opacity-10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <img src="{{ url_for('static', filename='assets/logo/logo.svg') }}" alt="Recy Logo"
                          class="w-3/4 h-3/4 object-contain animate-pulse">
