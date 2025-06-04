@@ -8,9 +8,6 @@ venv/
 env/
 .venv/
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints
-
 # VS Code settings
 .vscode/
 
@@ -18,9 +15,8 @@ env/
 .idea/
 
 # Model files
-model/
-*.pkl
-*.joblib
+model/*.pkl
+model/*.keras
 
 # OS files
 .DS_Store
