@@ -1,121 +1,143 @@
-<nav class="max-w-[1440px] mx-auto p-6 md:p-4 fixed top-0 left-0 right-0 z-50">
-    <div class="flex justify-between items-center gap-4 md:gap-10">
-        <div>
-            <a href="/">
-                <img src="{{ url_for('static', filename='assets/logo/logo.svg') }}" alt="Recy Logo" class="w-12 h-12 md:w-14 md:h-14">
-            </a>
-        </div>
-        <button id="menu-toggle" class="block md:hidden text-darkgreen focus:outline-none" aria-label="Toggle menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                 class="lucide lucide-menu-icon lucide-menu">
-                <path d="M4 12h16"/>
-                <path d="M4 18h16"/>
-                <path d="M4 6h16"/>
-            </svg>
-        </button>
-        <div id="menu-overlay"
-             class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 ease-in-out opacity-0"></div>
-        <ul class="hidden md:flex justify-around w-1/2">
-            <li><a href="/" class="text-darkgreen hover:text-oranye transition-colors duration-300">Home</a></li>
-            <li><a href="/about" class="text-darkgreen hover:text-oranye transition-colors duration-300">About</a></li>
-            <li><a href="/clasification" class="text-darkgreen hover:text-oranye transition-colors duration-300">Classification</a>
-            </li>
-            <li><a href="/contact" class="text-darkgreen hover:text-oranye transition-colors duration-300">Contact</a></li>
-        </ul>
-        <div id="side-menu"
-             class="fixed top-0 right-0 w-64 h-full bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-lg flex flex-col">
-            <ul class="flex flex-col p-6 gap-6">
-                <svg id="close-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                     class="lucide lucide-x-icon lucide-x absolute top-4 right-4 cursor-pointer">
-                    <line x1="18" x2="6" y1="6" y2="18"/>
-                    <line x1="6" x2="18" y1="6" y2="18"/>
+<div id="container-nav" class="fixed top-0 left-0 right-0 z-30">
+    <nav class="max-w-[1440px] mx-auto p-6 md:p-4">
+        <div class="flex justify-between items-center gap-4 md:gap-10">
+            <div>
+                <a href="/">
+                    <img src="{{ url_for('static', filename='assets/logo/logo.svg') }}" alt="Recy Logo"
+                         class="w-12 h-12 md:w-14 md:h-14">
+                </a>
+            </div>
+            <button id="menu-toggle" class="block md:hidden text-darkgreen focus:outline-none" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-menu-icon lucide-menu">
+                    <path d="M4 12h16"/>
+                    <path d="M4 18h16"/>
+                    <path d="M4 6h16"/>
                 </svg>
-                <li><a href="/"
-                       class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Home</a></li>
-                <li><a href="/about"
-                       class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">About</a></li>
-                <li><a href="/clasification" class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Classification</a>
+            </button>
+            <div id="menu-overlay"
+                 class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 ease-in-out opacity-0"></div>
+            <ul class="hidden md:flex justify-around w-1/2">
+                <li><a href="/" class="text-darkgreen hover:text-oranye transition-colors duration-300">Home</a></li>
+                <li><a href="/about" class="text-darkgreen hover:text-oranye transition-colors duration-300">About</a>
                 </li>
-                <li><a href="/contact" class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Contact</a>
+                <li><a href="/clasification" class="text-darkgreen hover:text-oranye transition-colors duration-300">Classification</a>
                 </li>
+                <li><a href="/contact"
+                       class="text-darkgreen hover:text-oranye transition-colors duration-300">Contact</a></li>
             </ul>
-        </div>
+            <div id="side-menu"
+                 class="fixed top-0 right-0 w-64 h-screen bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-lg flex flex-col shadow-sm">
+                <ul class="flex flex-col p-6 gap-6">
+                    <svg id="close-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round"
+                         class="lucide lucide-x-icon lucide-x absolute top-4 right-4 cursor-pointer">
+                        <line x1="18" x2="6" y1="6" y2="18"/>
+                        <line x1="6" x2="18" y1="6" y2="18"/>
+                    </svg>
+                    <li><a href="/"
+                           class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Home</a>
+                    </li>
+                    <li><a href="/about"
+                           class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">About</a>
+                    </li>
+                    <li><a href="/clasification"
+                           class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Classification</a>
+                    </li>
+                    <li><a href="/contact"
+                           class="text-a text-darkgreen block py-2 hover:text-oranye transition-colors duration-300">Contact</a>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="hidden md:flex items-center gap-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                 class="lucide lucide-search-icon lucide-search">
-                <path d="m21 21-4.34-4.34"/>
-                <circle cx="11" cy="11" r="8"/>
-            </svg>
-            <div class="flex items-center gap-2 cursor-pointer">
+            <div class="hidden md:flex items-center gap-6">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                     class="lucide lucide-globe-icon lucide-globe">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-                    <path d="M2 12h20"/>
+                     class="lucide lucide-search-icon lucide-search">
+                    <path d="m21 21-4.34-4.34"/>
+                    <circle cx="11" cy="11" r="8"/>
                 </svg>
-                <small class="text-darkgreen font-bold">EN</small>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                     class="lucide lucide-chevron-down-icon lucide-chevron-down">
-                    <path d="m6 9 6 6 6-6"/>
-                </svg>
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-globe-icon lucide-globe">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                        <path d="M2 12h20"/>
+                    </svg>
+                    <small class="text-darkgreen font-bold">EN</small>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                        <path d="m6 9 6 6 6-6"/>
+                    </svg>
+                </div>
             </div>
         </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            new Menu();
-        });
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                new Menu();
+            });
 
-        class Menu {
-            constructor() {
-                this.nav = document.querySelector('nav');
-                this.menuToggle = document.getElementById('menu-toggle');
-                this.sideMenu = document.getElementById('side-menu');
-                this.menuOverlay = document.getElementById('menu-overlay');
-                this.closeMenu = document.getElementById('close-menu');
+            class Menu {
+                constructor() {
+                    this.nav = document.getElementById('container-nav');
+                    this.menuToggle = document.getElementById('menu-toggle');
+                    this.sideMenu = document.getElementById('side-menu');
+                    this.menuOverlay = document.getElementById('menu-overlay');
+                    this.closeMenu = document.getElementById('close-menu');
 
-                this.initializeEventListeners();
-            }
+                    this.initializeEventListeners();
+                }
 
-            initializeEventListeners() {
-                this.menuToggle.addEventListener('click', () => {
-                    this.sideMenu.classList.remove('translate-x-full');
-                    this.menuOverlay.classList.remove('hidden');
-                    setTimeout(() => {
-                        this.menuOverlay.classList.remove('opacity-0');
-                    }, 10);
-                    document.body.classList.add('overflow-hidden');
-                });
+                initializeEventListeners() {
+                    window.addEventListener('scroll', () => {
+                        this.scrollDownBlur();
+                    });
 
-                this.closeMenu.addEventListener('click', () => {
-                    this.closeMenuHandler();
-                });
+                    this.menuToggle.addEventListener('click', () => {
+                        this.sideMenu.classList.remove('translate-x-full');
+                        this.menuOverlay.classList.remove('hidden');
+                        setTimeout(() => {
+                            this.menuOverlay.classList.remove('opacity-0');
+                        }, 10);
+                        document.body.classList.add('overflow-hidden');
+                    });
 
-                this.menuOverlay.addEventListener('click', () => {
-                    this.closeMenuHandler();
-                });
-
-                window.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
+                    this.closeMenu.addEventListener('click', () => {
                         this.closeMenuHandler();
-                    }
-                });
-            }
+                    });
 
-            closeMenuHandler() {
-                this.menuOverlay.classList.add('opacity-0');
-                this.sideMenu.classList.add('translate-x-full');
-                setTimeout(() => {
-                    this.menuOverlay.classList.add('hidden');
-                }, 300);
-                document.body.classList.remove('overflow-hidden');
+                    this.menuOverlay.addEventListener('click', () => {
+                        this.closeMenuHandler();
+                    });
+
+                    window.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape') {
+                            this.closeMenuHandler();
+                        }
+                    });
+                }
+
+                closeMenuHandler() {
+                    this.menuOverlay.classList.add('opacity-0');
+                    this.sideMenu.classList.add('translate-x-full');
+                    setTimeout(() => {
+                        this.menuOverlay.classList.add('hidden');
+                    }, 300);
+                    document.body.classList.remove('overflow-hidden');
+                }
+
+                scrollDownBlur() {
+                    if (window.scrollY > 100) {
+                        this.nav.classList.add('backdrop-blur-sm', 'shadow-sm');
+                    } else {
+                        this.nav.classList.remove('backdrop-blur-sm', 'shadow-sm');
+                    }
+                }
             }
-        }
-    </script>
-</nav>
+        </script>
+    </nav>
+</div>
