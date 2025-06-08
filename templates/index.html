@@ -13,13 +13,14 @@
     <section class="w-full min-h-screen flex flex-col justify-center items-center text-center gap-12">
         <div class="flex flex-col md:flex-row items-center justify-center">
             <img src="{{ url_for('static', filename='assets/bg/bg-hero.jpg') }}" alt="Background Hero"
-                      class="w-full h-full object-cover absolute inset-0 -z-10">
+                 class="w-full h-full object-cover absolute inset-0 -z-10">
             <div class="absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-100 -z-10"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-white to-transparent opacity-20 -z-10"></div>
             <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-left gap-8">
                 <h1 class="text-white font-extrabold text-h3 md:text-h1">Recycle Today for a <span class="text-oranye">Better Tomorrow</span>
                 </h1>
-                <p class="text-sm md:text-p opacity-90 leading-8">Join our initiative to create a cleaner, greener world through proper waste
+                <p class="text-sm md:text-p opacity-90 leading-8">Join our initiative to create a cleaner, greener world
+                    through proper waste
                     management and recycling practices.</p>
                 <div class="flex gap-6">
                     <a href="/clasification"
@@ -40,10 +41,10 @@
             </div>
         </div>
     </section>
-    <section class="w-full min-h-screen flex flex-col justify-center text-center items-center gap-6 md:gap-12 my-12">
+    <section class="w-full min-h-screen flex flex-col justify-center text-left md:text-center items-center gap-6 md:gap-12 my-12">
         <div class="flex flex-col items-center">
             <h1 class="text-darkgreen font-extrabold text-h3 md:text-h1">Trash Categories</h1>
-            <p class="max-w-6xl">
+            <p class="max-w-6xl text-sm md:text-p opacity-90 leading-8">
                 Learn how to properly sort different types of waste for efficient recycling and environmental
                 protection.
             </p>
@@ -70,78 +71,65 @@
             {% endfor %}
         </div>
     </section>
-
-    <!-- Call to Action Section -->
-    <section
-            class="py-20 px-6 md:px-10 bg-gradient-to-r from-verdigris to-munsellblue text-white rounded-t-[50px] md:rounded-t-[100px]">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-h3 md:text-h2 font-heading mb-6">Ready to Make a <span
-                    class="text-pechyellow">Difference?</span></h2>
-            <p class="mb-10 opacity-90">Take the first step towards responsible waste management by using our
-                classification tool to properly identify and sort your waste.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300">
-                    <div class="w-16 h-16 bg-pechyellow rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             class="text-darkgreen">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-h6 font-heading mb-2">Join Community</h3>
-                    <p class="text-small opacity-80">Connect with like-minded individuals committed to
-                        sustainability.</p>
-                </div>
-
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300">
-                    <div class="w-16 h-16 bg-pechyellow rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             class="text-darkgreen">
-                            <path d="M3 6h18"/>
-                            <path d="M7 12h10"/>
-                            <path d="M10 18h4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-h6 font-heading mb-2">Sort Waste</h3>
-                    <p class="text-small opacity-80">Learn the proper way to categorize and dispose of different
-                        materials.</p>
-                </div>
-
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300">
-                    <div class="w-16 h-16 bg-pechyellow rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             class="text-darkgreen">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <path d="m9 11 3 3L22 4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-h6 font-heading mb-2">Make Impact</h3>
-                    <p class="text-small opacity-80">Be part of the solution to reduce waste and protect our planet.</p>
-                </div>
-            </div>
-
-            <a href="/clasification"
-               class="inline-block bg-oranye hover:bg-opacity-90 text-white font-link py-4 px-10 rounded-full transition-all duration-300 text-center text-p">
-                Start Classifying Now
-            </a>
+    <section class="w-full min-h-screen flex flex-col justify-center items-center text-left md:text-center gap-8 md:gap-12 my-12 px-4 md:px-8">
+        <div class="max-w-4xl mx-auto flex flex-col items-center gap-4">
+            <h2 class="text-darkgreen font-extrabold text-h3 md:text-h1">
+                Ready to Make a <span class="text-oranye">Difference?</span>
+            </h2>
+            <p class="max-w-6xl text-sm md:text-p opacity-90 leading-8">
+                Take the first step towards responsible waste management by using our classification tool to properly
+                identify and sort your waste.
+            </p>
         </div>
+        <div class="max-w-6xl w-full flex flex-col md:flex-row justify-center items-stretch gap-6 md:gap-8 mb-8">
+            <div class="flex-1 bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:bg-opacity-20 transition-all duration-300 flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-pechyellow rounded-full flex items-center justify-center mb-4 shadow-md">
+                    <!-- icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-darkgreen" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3 class="text-h6 font-heading font-semibold mb-2 text-darkgreen">Join Community</h3>
+                <p class="text-small opacity-80">Connect with like-minded individuals committed to sustainability.</p>
+            </div>
+            <div class="flex-1 bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:bg-opacity-20 transition-all duration-300 flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-pechyellow rounded-full flex items-center justify-center mb-4 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-darkgreen" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M3 6h18"/>
+                        <path d="M7 12h10"/>
+                        <path d="M10 18h4"/>
+                    </svg>
+                </div>
+                <h3 class="text-h6 font-heading font-semibold mb-2 text-darkgreen">Sort Waste</h3>
+                <p class="text-small opacity-80">Learn the proper way to categorize and dispose of different
+                    materials.</p>
+            </div>
+            <div class="flex-1 bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:bg-opacity-20 transition-all duration-300 flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-pechyellow rounded-full flex items-center justify-center mb-4 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-darkgreen" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <path d="m9 11 3 3L22 4"/>
+                    </svg>
+                </div>
+                <h3 class="text-h6 font-heading font-semibold mb-2 text-darkgreen">Make Impact</h3>
+                <p class="text-small opacity-80">Be part of the solution to reduce waste and protect our planet.</p>
+            </div>
+        </div>
+        <a href="/clasification"
+           class="bg-oranye hover:bg-darkgreen text-white font-bold py-4 px-10 rounded-full shadow-lg transition-all duration-300 max-w-xs mx-auto text-p">
+            Start Classifying Now
+        </a>
     </section>
 </main>
 {% include 'template/footer.html' %}
-
-<script>
-    // For data needed by the template
-    document.addEventListener('DOMContentLoaded', function () {
-        // This is a placeholder for any dynamic content
-        // You would typically load this from the backend
-        const description = {description}
-    });
-</script>
 </body>
 </html>
