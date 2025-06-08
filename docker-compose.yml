@@ -1,18 +1,21 @@
+version: '3.8'
+
 services:
   flask:
     build: .
-    container_name: flask_app
+    container_name: recy_flask
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
     restart: always
-    expose:
-      - "8000"
 
   nginx:
     image: nginx:latest
-    container_name: nginx_reverse_proxy
+    container_name: recy_nginx
     ports:
       - "80:80"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - flask
-    restart: always
