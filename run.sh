@@ -1,4 +1,5 @@
 #!/bin/bash
-export FLASK_APP=app.py
-export FLASK_ENV=development
-flask run
+echo "Start Deployment..."
+docker compose down
+docker compose up -d --build
+docker compose ps
