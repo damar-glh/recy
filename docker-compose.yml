@@ -4,21 +4,30 @@ services:
   flask:
     build: .
     container_name: recy_flask
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     volumes:
       - .:/app
     restart: always
-    depends_on:
-      - nginx
 
   nginx:
     image: nginx:latest
     container_name: recy_nginx
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
     depends_on:
       - flask
     restart: always
+
+  certbot:
+    image: certbot/certbot
+    container_name: recy_certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do sleep 6h & wait $${!}; certbot renew; done'"

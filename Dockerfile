@@ -14,8 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY package.json package-lock.json ./
 RUN npm install
-
-COPY tailwind.config.js ./tailwind.config.js
+COPY tailwind.config.js ./
 COPY static/src/input.css ./static/src/input.css
 RUN npx tailwindcss -i ./static/src/input.css -o ./static/dist/output.css --minify
 
